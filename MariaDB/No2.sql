@@ -1,9 +1,14 @@
-SELECT SUM(mount) HQ,
-(SELECT SUM(mount)  FROM salary WHERE user_id IN (SELECT id FROM user WHERE dprtmt_id = (SELECT id FROM dprtmt WHERE name = 'management support team' ))) managementSupportTeam , 
-(SELECT SUM(mount) FROM salary WHERE user_id IN (SELECT id FROM user WHERE dprtmt_id = (SELECT id FROM dprtmt WHERE NAME = 'HR team' ))) HRTeam, 
-(SELECT SUM(mount) FROM salary WHERE user_id IN (SELECT id FROM user WHERE dprtmt_id = (SELECT id FROM dprtmt WHERE name = 'R&D team' ))) RDTeam
+SELECT a.name  , Sum(c.mount) totalSalary 
+FROM dprtmt a, user b, salary c
+WHERE a.id = b.dprtmt_id AND b.id = c.user_id
+GROUP BY	b.dprtmt_id
+ORDER BY Sum(c.mount) DESC
+LIMIT 1
+		
 
-FROM salary WHERE user_id IN (SELECT id FROM user WHERE dprtmt_id = (SELECT id FROM dprtmt WHERE name = 'HQ' )) 
+		
+		
+		
 
 
  
