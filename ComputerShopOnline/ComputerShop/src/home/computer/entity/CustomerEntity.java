@@ -6,18 +6,22 @@ public class CustomerEntity {
 	private String name;
 	private String address;
 	private int sdt;
+	private int money;
 	
 	public CustomerEntity() {
 		super();
 	}
 
-	public CustomerEntity(int id, int id_user, String name, String address, int sdt) {
+	public CustomerEntity(int id, int id_user, String name, String address, int sdt, int money) {
 		super();
 		this.id = id;
 		this.id_user = id_user;
 		this.name = name;
 		this.address = address;
 		this.sdt = sdt;
+		this.money = money;
+		
+		
 	}
 
 	public int getId() {
@@ -58,6 +62,14 @@ public class CustomerEntity {
 
 	public void setSdt(int sdt) {
 		this.sdt = sdt;
+	}
+	
+	public int getMoney() {
+		return money;
+	}
+
+	public void setMoney(int money) {
+		this.money = money;
 	}
 	
 	

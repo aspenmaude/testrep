@@ -3,7 +3,7 @@ package home.computer.entity;
 public class productEntity {
 	
 	private int id;
-	private int id_category;
+	private String id_category;
 	private String ProductName;
 	private int UnitPrice;
 	private int UnitInStock;
@@ -12,7 +12,7 @@ public class productEntity {
 		super();
 	}
 
-	public productEntity(int id, int id_category, String productName, int unitPrice, int unitInStock) {
+	public productEntity(int id, String id_category, String productName, int unitPrice, int unitInStock) {
 		super();
 		this.id = id;
 		this.id_category = id_category;
@@ -29,11 +29,11 @@ public class productEntity {
 		this.id = id;
 	}
 
-	public int getId_category() {
+	public String getId_category() {
 		return id_category;
 	}
 
-	public void setId_category(int id_category) {
+	public void setId_category(String id_category) {
 		this.id_category = id_category;
 	}
 
@@ -60,9 +60,6 @@ public class productEntity {
 	public void setUnitInStock(int unitInStock) {
 		UnitInStock = unitInStock;
 	}
-	
-	
-	
-	
+		
 	
 }
