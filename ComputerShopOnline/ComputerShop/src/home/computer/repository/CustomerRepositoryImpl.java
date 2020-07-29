@@ -139,6 +139,37 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 		}
 		return money;
 	}
+	
+	@Override
+	public void insert_id_user(String user) {
+		
+		try {
+			String queryString = "INSERT INTO customer(id_user,money) VALUES(?,?)";
+			connection = getConnection();
+			statement = connection.prepareStatement(queryString);
+			statement.setString(1, user);
+			statement.setInt(2, 0);
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Try again!");
+		}
+		finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+				if (result != null) {
+					result.close();
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
 	
 	

@@ -253,7 +253,8 @@ public class productRepositoryImpl implements productRepository {
 			{
 				System.out.print(productLs.get(i).getId());
 				System.out.print(" | ProductName: ");
-				System.out.print(productLs.get(i).getProductName());
+				System.out.printf("%-70s ",productLs.get(i).getProductName());
+				System.out.printf("%-5s","");
 				System.out.print(" | Price: ");
 				System.out.println(productLs.get(i).getUnitPrice());
 			}
@@ -304,7 +305,7 @@ public class productRepositoryImpl implements productRepository {
 			{
 				System.out.print(productLs.get(i).getId());
 				System.out.print(". ");
-				System.out.print(productLs.get(i).getProductName());
+				System.out.printf("%-70s",productLs.get(i).getProductName());
 				System.out.print(": ");
 				System.out.print(productLs.get(i).getUnitPrice());
 				System.out.println("$ ");

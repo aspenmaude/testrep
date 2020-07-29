@@ -21,7 +21,7 @@ public class orderDetailRepositoryImpl implements orderDetailRepository {
 		conn = connectionFactory.getInstance().getConnection();
 		return conn;
 	}
-	
+
 	@Override
 	public void printRevenue() {
 		List<orderDetailEntity> orderDetailLs = new ArrayList<orderDetailEntity>();
@@ -34,30 +34,65 @@ public class orderDetailRepositoryImpl implements orderDetailRepository {
 			
 			while (result.next()){
 				orderDetailEntity orderDetail = new orderDetailEntity();
-				orderDetail.setId_order(result.getString("id_order"));
-				orderDetail.setId_product(result.getString("id_product"));
-				orderDetail.setUnitPrice(result.getInt("UnitPrice"));
+				orderDetail.setId(result.getInt("id"));
+				orderDetail.setIdOrder(result.getInt("id_order"));
+				orderDetail.setId_productName(result.getString("id_ProductName"));
 				orderDetail.setQuantity(result.getInt("Quantity"));
-				
 				orderDetailLs.add(orderDetail);
 			}
 			int revenue = 0;
 			for (int i = 0; i < orderDetailLs.size();i++)
 			{
 				
-				System.out.print("order: ");
-				System.out.print(orderDetailLs.get(i).getId_order());
+				System.out.print(orderDetailLs.get(i).getId());
+				System.out.print(". | order: ");
+				System.out.print(orderDetailLs.get(i).getIdOrder());
 				System.out.print(" | product: ");
-				System.out.print(orderDetailLs.get(i).getId_product());
-				System.out.print(" | UnitPrice: ");
-				System.out.print(orderDetailLs.get(i).getUnitPrice());
+				System.out.print(orderDetailLs.get(i).getId_productName());
 				System.out.print(" | Quantity: ");
 				System.out.println(orderDetailLs.get(i).getQuantity());
-				revenue = revenue + ( (orderDetailLs.get(i).getUnitPrice()) * ( orderDetailLs.get(i).getQuantity()) );
+				revenue = 0;
 			}
 			System.out.println("total revenue: " + revenue);
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}
+		finally {
+			try {
+				if (connection != null)
+					connection.close();
+				if (statement != null)
+					statement.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	@Override
+	public void insertOrderDetail(int idorder, String idproductname) {
+		try {
+			String queryString = "INSERT INTO computer.`order_detail`(id_order,id_ProductName,Quantity) VALUES(?,?,?) ";
+			connection = getConnection();
+			statement = connection.prepareStatement(queryString);
+			statement.setInt(1, idorder);
+			statement.setString(2, idproductname);
+			statement.setInt(3, 1);
+			statement.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if (connection != null)
+					connection.close();
+				if (statement != null)
+					statement.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 	}

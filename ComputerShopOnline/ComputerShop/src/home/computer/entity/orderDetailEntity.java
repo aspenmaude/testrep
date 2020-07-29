@@ -1,20 +1,20 @@
 package home.computer.entity;
 
 public class orderDetailEntity {
-	private int id, UnitPrice, Quantity;
-	private String id_order, id_product;
+	private int id, Quantity;
+	private int idOrder;
+	private String  id_productName;
 	
 	public orderDetailEntity() {
 		super();
 	}
 
-	public orderDetailEntity(int id, int unitPrice, int quantity, String id_order, String id_product) {
+	public orderDetailEntity(int id, int quantity, int idOrder, String id_productName) {
 		super();
 		this.id = id;
-		UnitPrice = unitPrice;
 		Quantity = quantity;
-		this.id_order = id_order;
-		this.id_product = id_product;
+		this.idOrder = idOrder;
+		this.id_productName = id_productName;
 	}
 
 	public int getId() {
@@ -25,14 +25,6 @@ public class orderDetailEntity {
 		this.id = id;
 	}
 
-	public int getUnitPrice() {
-		return UnitPrice;
-	}
-
-	public void setUnitPrice(int unitPrice) {
-		UnitPrice = unitPrice;
-	}
-
 	public int getQuantity() {
 		return Quantity;
 	}
@@ -41,24 +33,22 @@ public class orderDetailEntity {
 		Quantity = quantity;
 	}
 
-	public String getId_order() {
-		return id_order;
+	public int getIdOrder() {
+		return idOrder;
 	}
 
-	public void setId_order(String id_order) {
-		this.id_order = id_order;
+	public void setIdOrder(int idOrder) {
+		this.idOrder = idOrder;
 	}
 
-	public String getId_product() {
-		return id_product;
+	public String getId_productName() {
+		return id_productName;
 	}
 
-	public void setId_product(String id_product) {
-		this.id_product = id_product;
+	public void setId_productName(String id_productName) {
+		this.id_productName = id_productName;
 	}
-	
-	
-	
+
 	
 	
 }

@@ -8,5 +8,6 @@ public interface CustomerRepository {
 	List<CustomerEntity> findALL();
 	void UpdateMoney(String idUser, int money);
 	int SelectMoney(String idUser);
+	void insert_id_user(String user);
 
 }

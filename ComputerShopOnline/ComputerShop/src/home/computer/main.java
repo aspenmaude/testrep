@@ -8,11 +8,14 @@ import home.computer.repository.CustomerRepository;
 import home.computer.repository.CustomerRepositoryImpl;
 import home.computer.repository.orderDetailRepository;
 import home.computer.repository.orderDetailRepositoryImpl;
+import home.computer.repository.orderRepository;
+import home.computer.repository.orderRepositoryImpl;
 import home.computer.repository.productRepository;
 import home.computer.repository.productRepositoryImpl;
 import home.computer.repository.userRepository;
 import home.computer.repository.userRepositoryImpl;
 import home.computer.entity.CustomerEntity;
+import home.computer.entity.orderEntity;
 import home.computer.entity.productEntity;
 
 
@@ -25,6 +28,7 @@ public class main {
 		productRepository productRepo = new productRepositoryImpl();
 		orderDetailRepository orderDetailRepo = new orderDetailRepositoryImpl();
 		CustomerRepository customerRepo = new CustomerRepositoryImpl();
+		orderRepository orderRepo = new orderRepositoryImpl();
 		
 		boolean checklog = false;
 		System.out.println("Welcome Computer Shop");
@@ -102,7 +106,7 @@ public class main {
 						checklog = userRepo.signInUser(user, password);
 						if (checklog == true)
 						{
-							System.out.println(" Computer Shop .");
+							System.out.println("      Computer Shop. ");
 							int choose = 1;
 							while(choose != 0)
 							{
@@ -125,31 +129,60 @@ public class main {
 									break;
 								case 3:
 									System.out.print("Input idProduct: ");
-									int chooseProduct = sc.nextInt();
-									int price = productRepo.chooseProduct(chooseProduct).getUnitPrice();
-									int amount = productRepo.chooseProduct(chooseProduct).getUnitInStock();
-									String namePro = productRepo.chooseProduct(chooseProduct).getProductName();
+									int idProduct = sc.nextInt();
+									int price = productRepo.chooseProduct(idProduct).getUnitPrice();
+									int amount = productRepo.chooseProduct(idProduct).getUnitInStock();
+									String namePro = productRepo.chooseProduct(idProduct).getProductName();
 									System.out.print(namePro);
 									System.out.print(": " + price);
 									System.out.println("$ | amount: " + amount);
 									if (amount > 0)
 									{
-										System.out.print("Input change money: ");
-										int moneyInput = sc.nextInt();
-										moneyInput  += money;
-										customerRepo.UpdateMoney(user,moneyInput);
-										if (moneyInput >= price)
+										System.out.print("Do you want input change money ? Choose y or n: ");
+										String y = sc.next();
+										orderEntity orderE = new orderEntity();
+										if(y.equals("y"))
 										{
-											moneyInput -= price;
-											amount -= 1;
-											productRepo.updateUnitInStock(amount, chooseProduct);
-											customerRepo.UpdateMoney(user, moneyInput);
-											System.out.println("Your product: " + namePro + " | Money left: " + moneyInput + "$ ");
+											System.out.print("Input change money: ");
+											int moneyInput = sc.nextInt();
+											moneyInput  += money;
+											customerRepo.UpdateMoney(user,moneyInput);
+											if (moneyInput >= price)
+											{
+												moneyInput -= price;
+												amount -= 1;
+												productRepo.updateUnitInStock(amount, idProduct);
+												customerRepo.UpdateMoney(user, moneyInput);
+												System.out.println("Your product: " + namePro + " | Money left: " + moneyInput + "$ ");
+												orderRepo.insertOrder(user, namePro);
+												int idOrd = orderRepo.findIdOrder(user, namePro);
+												orderDetailRepo.insertOrderDetail(idOrd, namePro);
+											}
+											
+											else
+											{
+												System.out.println("Not enough Money. ");
+											}
 										}
-										
 										else
 										{
-											System.out.println("Not enough Money. ");
+											money = customerRepo.SelectMoney(user);
+											if (money >= price)
+											{
+												money -= price;
+												amount -= 1;
+												productRepo.updateUnitInStock(amount, idProduct);
+												customerRepo.UpdateMoney(user, money);
+												System.out.println("Your product: " + namePro + " | Money left: " + money + "$ ");
+												orderRepo.insertOrder(user, namePro);
+												int idOrd = orderRepo.findIdOrder(user, namePro);
+												orderDetailRepo.insertOrderDetail(idOrd, namePro);
+											}
+											
+											else
+											{
+												System.out.println("Not enough Money. ");
+											}
 										}
 										
 									}
@@ -176,7 +209,9 @@ public class main {
 				String user = sc.next();
 				System.out.print("Input password: ");
 				String password = sc.next();
-				userRepo.signUpUser(user, password);
+				boolean check = userRepo.signUpUser(user, password);
+				if (check)
+					customerRepo.insert_id_user(user);
 				break;
 	
 			default:

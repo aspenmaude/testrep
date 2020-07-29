@@ -81,9 +81,9 @@ public class userRepositoryImpl implements userRepository{
 	}
 	
 	@Override
-	public void signUpUser(String u, String p) {
+	public boolean signUpUser(String u, String p) {
+		boolean check = true;
 		try {
-			
 			String queryString = "INSERT INTO user(User,Password,Type) VALUES(?,?,?) ";
 			connection = getConnection();
 			statement = connection.prepareStatement(queryString);
@@ -93,9 +93,10 @@ public class userRepositoryImpl implements userRepository{
 			statement.setString(3, "user");
 			statement.executeUpdate();
 			System.out.println("SignUp Success");
-			
-		} catch (Exception e) {
-			System.out.println("user already exists. Try again!");
+		} catch (SQLException e) {
+			System.out.println("user already exists. ");
+			check = false;
+			return check;
 		}
 		
 		
@@ -111,6 +112,7 @@ public class userRepositoryImpl implements userRepository{
 				e.printStackTrace();
 			}
 		}
+		return check;
 	}
 	
 }
