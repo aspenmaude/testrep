@@ -1,0 +1,306 @@
+
+/*-----------------------------------Common------------------------------*/
+.pc-layout{
+	position: relative;
+	overflow: hidden;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+.icon{
+	display: inline-block;
+	background-image: url('../img/icon-header.png'); 
+	background-size: 500px 500px;
+	background-position: left top;
+	vertical-align: middle;
+}
+.icon-footer{
+	display: inline-block;
+	width: 30px;
+    height: 32px;
+	background-position: left top;
+	background-image: url('../img/icon.png') !important; 
+	background-size: 100%;
+}
+.icon.icon-header {
+	width: 33px;
+	height: 23px;
+	background-position: -52px -257px; 
+}
+.icon-footer.icon-facebook {
+    background-position: 0 0;
+}
+.icon-footer.icon-youtube {
+	background-position: 0 -160px;
+}
+.icon-footer.icon-navipost {
+	background-position: 0 -94px
+}
+.icon-footer.icon-twitter {
+	background-position: 0 -32px;
+}
+.icon-footer.icon-instagram {
+	background-position: 0 -192px;
+}
+/*-----------------------------------//Common------------------------------*/
+
+/*-----------------------------------header------------------------------*/
+
+header {}
+header .header-top {
+	height: 5vh;
+	border: 1px solid #d6bbadd4;
+	position: relative;
+	
+
+}
+header .header-top select {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 5px 300px;
+	border: none;
+	color: #717171;
+}
+header .header-top select:focus {outline: none;}
+header .header-top select option {}
+header .header-top select option:nth-child(1) {display: none;}
+
+header .header-bottom {height: 10vh;}
+header .header-bottom ul {}
+header .header-bottom ul li {
+	display: inline-block;
+	padding: 10px 20px;
+
+}
+
+header .header-bottom ul li:nth-child(1) {}
+header .header-bottom ul li:nth-child(2) {}
+header .header-bottom ul li:nth-child(3) {}
+header .header-bottom ul li:nth-child(4) {}
+header .header-bottom ul li:nth-child(5) {}
+header .header-bottom ul li:nth-child(6) {}
+header .header-bottom ul li:nth-child(7) {vertical-align: middle;}
+
+header .header-bottom ul li:nth-child(8) {background-color: #36719d;}
+header .header-bottom ul li:nth-child(8) a {color: #fff;text-align: center;}
+
+header .header-bottom ul li:nth-child(9) {background-color: #36719d;}
+header .header-bottom ul li:nth-child(9) a {color: #fff;text-align: center;}
+
+header .header-bottom ul li:nth-child(10) {background-color: #002c5f;}
+header .header-bottom ul li:nth-child(10) a {color: #fff;text-align: center;}
+
+header .header-bottom ul li a {
+	font-size: 16px;
+	color: #626262;
+	text-decoration: none;
+}
+header .header-bottom ul li a img {width: 100%;}
+
+
+/*-----------------------------------//header------------------------------*/
+
+/*-----------------------------------//Section------------------------------*/
+
+section {}
+section .content-top {
+	height: 80vh;
+	background-color: #e6e1dd;
+}
+section .content-top .slider-wrap {}
+section .content-top .slider-wrap .carousel-indicators {bottom: -50px;}
+section .content-top .slider-wrap .carousel-indicators .active{
+	background-color: #006992;
+}
+section .content-top .slider-wrap .carousel-indicators li {
+	border: 1px solid #000;
+	}
+
+section .content-top .slider-wrap .carousel-inner {}
+section .content-top .slider-wrap .carousel-inner img {width: 100%;}
+
+section .content-top .carousel-inner .item {}
+section .content-top .carousel-inner .item:nth-child(3) .title-top h1{color: #fff;}
+section .content-top .carousel-inner .item:nth-child(5) .title-top h1{color: #fff;}
+section .content-top .carousel-inner .item:nth-child(5) .title-top p{color: #fff;}
+
+section .content-top .slider-wrap .carousel-inner .carousel-caption{
+	top: 0;
+    left: 0;
+    text-align: left;
+}
+section .content-top .carousel-caption .content1{
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+    height: 100%;
+}
+
+
+section .content-top .carousel-caption .content1 .title-top {
+	position: absolute;
+	left: 300px;
+	top:20px;
+}
+section .content-top .carousel-caption .content1 .title-top h1 {
+	font-size: 50px;
+    font-weight: bold;
+    color: #000;
+}
+section .content-top .carousel-caption .content1 .title-top p {
+	font-size: 30px;
+	color: #000;
+}
+
+
+section .content-top .carousel-caption .content1 .title-bottom {
+	position: absolute;
+	left: 300px;
+	bottom: 20px;
+}
+section .content-top .carousel-caption .content1 .title-bottom a {}
+section .content-top .carousel-caption .content1 .title-bottom a span {
+	background-color: #002c5f;
+    padding: 10px;
+    color: #fff;
+}
+section .content-top .carousel-caption .content1 .title-bottom a span:hover {background-color: #006992;}
+section .content-top .carousel-caption .content1 .title-bottom a:first-child {}
+section .content-top .carousel-caption .content1 .title-bottom a:lastchild {}
+
+}
+
+
+section .content-top .slider-wrap .carousel-inner .carousel-caption a {}
+section .content-top .slider-wrap .carousel-inner .carousel-caption a:first-child {}
+section .content-top .slider-wrap .carousel-inner .carousel-caption a:last-child {}
+
+section .content-top .slider-wrap .carousel-inner .carousel-caption a span {}
+
+
+section .content-top .slider-wrap .carousel-control{
+	width: 25px;
+	height: 25px;
+	background-color: #000;
+    text-align: center;
+    margin: 295px 16px;
+}
+
+
+
+
+
+
+section .content-mid {
+	height: 10vh;
+	padding: 10px;
+}
+section .content-mid h1 {
+	text-align: center;
+	font-weight: bold;
+}
+
+
+section .content-bottom {height: 30vh;}
+section .content-bottom .slider-bottom {}
+section .content-bottom .slider-bottom .carousel-indicators {}
+section .content-bottom .slider-bottom .carousel-indicators li {display: none;}
+
+section .content-bottom .slider-bottom .carousel-inner .col-md-2 {
+	margin: 0 30px 0 33px;
+	border: 1px solid #d8cfc9;
+	padding: 50px 20px;
+}
+section .content-bottom .slider-bottom .carousel-inner .col-md-2:hover {
+	background-color: #e6e1dd;
+}
+section .content-bottom .slider-bottom .carousel-inner .col-md-2 a {}
+section .content-bottom .slider-bottom .carousel-inner .col-md-2 a img {width: 100%;}
+section .content-bottom .slider-bottom .carousel-inner .col-md-2 .carousel-caption {
+	padding: 0;
+	color: #000;
+	font-size: 20px;
+}
+
+section .content-bottom .slider-bottom .left.carousel-control {
+	width: 30px; 
+	height: 28px; 
+	background-color: #000;
+	margin: 130px 0px;
+}
+section .content-bottom .slider-bottom .right.carousel-control {
+	width: 30px; 
+	height: 28px; 
+	background-color: #000;
+	margin: 130px 0px;
+}
+
+
+/*-----------------------------------//Section------------------------------*/
+
+
+/*-----------------------------------footer------------------------------*/
+
+footer {
+	height: 20vh;
+	background-color: #1c1b1b;
+}
+footer {}
+footer .footer-logo {
+	margin-top: 50px;
+	display: inline-block;
+	float: left;
+}
+footer .footer-logo a {}
+footer .footer-logo a img{}
+
+footer .footer-left {
+	margin-top: 50px;
+	display: inline-block;
+	float: left;
+}
+footer .footer-left ul {list-style: none;}
+footer .footer-left ul li {}
+footer .footer-left ul li a {color: #999;text-decoration: none;}
+footer .footer-left ul li a span {padding: 0 10px;}
+footer .footer-left ul li a span:nth-child(1) {border-right: 1px solid #999;}
+footer .footer-left ul li a span:nth-child(2) {}
+
+footer .footer-left ul li:nth-child(1) p {}
+footer .footer-left ul li:nth-child(2) p {padding-top: 20px;}
+footer .footer-left ul li:nth-child(3) p {}
+
+footer .footer-left ul li p {color: #999;}
+
+footer .footer-right {
+	margin-top: 50px;
+	display: inline-block;
+	float: right;
+}
+footer .footer-right .iconfooter {}
+footer .footer-right .iconfooter ul {}
+footer .footer-right .iconfooter ul li {display: inline-block;}
+footer .footer-right .iconfooter ul li a {margin-right: 12px;}
+
+footer .footer-right .select{}
+footer .footer-right .select select {
+	background-color: #000;
+	margin-left: 50px;
+	color: #999;
+	padding: 10px;
+	width: 60%;
+
+
+}
+footer .footer-right .select select option {}
+footer .footer-right .select select option:nth-child(1) {display: none;}
+
+
+
+
+
+
+
+
+
+/*-----------------------------------//footer------------------------------*/
