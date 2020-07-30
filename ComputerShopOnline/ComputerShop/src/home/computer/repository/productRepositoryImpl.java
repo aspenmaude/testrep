@@ -48,7 +48,7 @@ public class productRepositoryImpl implements productRepository {
 			for (int i = 0; i < productLs.size(); i++)
 			{
 				System.out.print("id: ");
-				System.out.print(productLs.get(i).getId());
+				System.out.printf("%-10s",productLs.get(i).getId());
 				System.out.print(" | id_category: ");
 				System.out.printf("%-10s",productLs.get(i).getId_category());
 				System.out.print(" | ProductName: ");

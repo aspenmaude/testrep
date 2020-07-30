@@ -54,7 +54,7 @@ public class main {
 					String password = sc.next();
 					if (user.equals("admin"))		// login admin
 					{
-						checklog = userRepo.signInUser(user, password); // Trả về false nếu sai mật khẩu
+						checklog = userRepo.signInUser(user, password); // return false if password fail
 						
 						if (checklog == true){
 							int choose = 1;
@@ -65,8 +65,7 @@ public class main {
 								System.out.println("1.Insert Product ");
 								System.out.println("2.Update Product ");
 								System.out.println("3.Delete Product ");
-								System.out.println("4.Print Revenue ");
-								System.out.println("5.View Table Product ");
+								System.out.println("4.View Table Product ");
 								System.out.println("0.Exit");
 								System.out.println("----------------------");
 								System.out.print("Choose 1, 2, 3, 4, 5 or 0 to exit: ");
@@ -86,9 +85,6 @@ public class main {
 									productRepo.delete();
 									break;
 								case 4:
-									orderDetailRepo.printRevenue();
-									break;
-								case 5:
 									productRepo.select();
 									break;
 								case 0:

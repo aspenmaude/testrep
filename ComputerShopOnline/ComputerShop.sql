@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   UNIQUE KEY `CategoryName` (`CategoryName`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Dumping data for table computer.category: ~6 rows (approximately)
+-- Dumping data for table computer.category: ~7 rows (approximately)
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`id`, `CategoryName`) VALUES
 	(4, 'ASUS'),
@@ -47,9 +47,9 @@ CREATE TABLE IF NOT EXISTS `customer` (
   PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`),
   CONSTRAINT `FK_customer_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`User`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
--- Dumping data for table computer.customer: ~4 rows (approximately)
+-- Dumping data for table computer.customer: ~5 rows (approximately)
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`id`, `id_user`, `name`, `address`, `sdt`, `Money`) VALUES
 	(1, 'user1', 'nghia', 'HCM', '000777', 20000),
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   CONSTRAINT `FK_order_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`User`)
 ) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 
--- Dumping data for table computer.order: ~4 rows (approximately)
+-- Dumping data for table computer.order: ~6 rows (approximately)
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 INSERT INTO `order` (`id`, `OrderName`, `id_user`, `id_product`, `OrderDate`) VALUES
 	(1, 'order01', 'user3', 'Asus VivoBook A542U i5 Ram 8Gb 15.6inch', '2020-07-24 08:49:31'),
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   CONSTRAINT `FK_order_detail_product` FOREIGN KEY (`id_ProductName`) REFERENCES `product` (`ProductName`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
--- Dumping data for table computer.order_detail: ~4 rows (approximately)
+-- Dumping data for table computer.order_detail: ~6 rows (approximately)
 /*!40000 ALTER TABLE `order_detail` DISABLE KEYS */;
 INSERT INTO `order_detail` (`id`, `id_order`, `id_ProductName`, `Quantity`) VALUES
 	(1, 1, 'Asus VivoBook A542U i5 Ram 8Gb 15.6inch', 1),
@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `FK_product_category` FOREIGN KEY (`id_category`) REFERENCES `category` (`CategoryName`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
--- Dumping data for table computer.product: ~7 rows (approximately)
+-- Dumping data for table computer.product: ~8 rows (approximately)
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `id_category`, `ProductName`, `UnitPrice`, `UnitInStock`) VALUES
 	(2, 'DELL', 'Dell Inspiron 5593 i5 1035G1 Ram 8Gb MX230 2Gb FHD', 600, 13),
@@ -141,9 +141,9 @@ CREATE TABLE IF NOT EXISTS `user` (
   `Type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `User` (`User`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
--- Dumping data for table computer.user: ~5 rows (approximately)
+-- Dumping data for table computer.user: ~6 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `User`, `Password`, `Type`) VALUES
 	(1, 'admin', 'admin', 'admin'),
