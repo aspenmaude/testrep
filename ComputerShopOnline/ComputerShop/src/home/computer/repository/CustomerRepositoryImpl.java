@@ -144,12 +144,14 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 	public void insert_id_user(String user) {
 		
 		try {
-			String queryString = "INSERT INTO customer(id_user,money) VALUES(?,?)";
+			String queryString = "INSERT INTO customer(id_user,money,name) VALUES(?,?,?)";
 			connection = getConnection();
 			statement = connection.prepareStatement(queryString);
 			statement.setString(1, user);
 			statement.setInt(2, 0);
+			statement.setString(3, "anonymous");
 			statement.executeUpdate();
+			
 		} catch (SQLException e) {
 			System.out.println("Try again!");
 		}

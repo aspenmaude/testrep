@@ -44,12 +44,12 @@ public class orderDetailRepositoryImpl implements orderDetailRepository {
 			for (int i = 0; i < orderDetailLs.size();i++)
 			{
 				
-				System.out.print(orderDetailLs.get(i).getId());
+				System.out.printf("%-3s",orderDetailLs.get(i).getId());
 				System.out.print(". | order: ");
-				System.out.print(orderDetailLs.get(i).getIdOrder());
+				System.out.printf("%-3s",orderDetailLs.get(i).getIdOrder());
 				System.out.print(" | product: ");
-				System.out.print(orderDetailLs.get(i).getId_productName());
-				System.out.print(" | Quantity: ");
+				System.out.printf("%-60s",orderDetailLs.get(i).getId_productName());
+				System.out.printf("%-3s"," | Quantity: ");
 				System.out.println(orderDetailLs.get(i).getQuantity());
 				revenue = 0;
 			}

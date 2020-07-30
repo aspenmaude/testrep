@@ -1,9 +1,12 @@
 package home.computer.repository;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -24,14 +27,18 @@ public class orderRepositoryImpl implements orderRepository{
 		return conn;
 	}
 	
+	
 	@Override
 	public void insertOrder(String iduser,String idproduct) {
 		try {
-			String queryString = "INSERT INTO computer.`order` (id_user,id_product) VALUES (?,?)";
+			java.util.Date date = new java.util.Date();
+			Object orderdate = new java.sql.Timestamp(date.getTime());
+			String queryString = "INSERT INTO `computer`.`order` (id_user, id_product, OrderDate) VALUES (?, ?, ?);";
 			connection = getConnection();
 			statement = connection.prepareStatement(queryString);
 			statement.setString(1, iduser);
 			statement.setString(2, idproduct);
+			statement.setObject(3, orderdate);
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

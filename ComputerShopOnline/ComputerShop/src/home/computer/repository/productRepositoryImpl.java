@@ -50,11 +50,11 @@ public class productRepositoryImpl implements productRepository {
 				System.out.print("id: ");
 				System.out.print(productLs.get(i).getId());
 				System.out.print(" | id_category: ");
-				System.out.print(productLs.get(i).getId_category());
+				System.out.printf("%-10s",productLs.get(i).getId_category());
 				System.out.print(" | ProductName: ");
-				System.out.print(productLs.get(i).getProductName());
-				System.out.print(" | UnitPrice: ");
-				System.out.print(productLs.get(i).getUnitPrice());
+				System.out.printf("%-70s",productLs.get(i).getProductName());
+				System.out.printf("%-10s", " | UnitPrice: ");
+				System.out.printf("%-10s",productLs.get(i).getUnitPrice());
 				System.out.print(" | UnitInStock: ");
 				System.out.println(productLs.get(i).getUnitInStock());
 			}

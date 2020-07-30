@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 import home.computer.repository.CustomerRepository;
 import home.computer.repository.CustomerRepositoryImpl;
+import home.computer.repository.categoryRepository;
+import home.computer.repository.categoryRepositoryImpl;
 import home.computer.repository.orderDetailRepository;
 import home.computer.repository.orderDetailRepositoryImpl;
 import home.computer.repository.orderRepository;
@@ -22,13 +24,14 @@ import home.computer.entity.productEntity;
 public class main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		Scanner sc = new Scanner(System.in);
 		userRepository userRepo = new userRepositoryImpl();
 		productRepository productRepo = new productRepositoryImpl();
 		orderDetailRepository orderDetailRepo = new orderDetailRepositoryImpl();
 		CustomerRepository customerRepo = new CustomerRepositoryImpl();
 		orderRepository orderRepo = new orderRepositoryImpl();
+		categoryRepository categoryRepo = new categoryRepositoryImpl();
 		
 		boolean checklog = false;
 		System.out.println("Welcome Computer Shop");
@@ -72,6 +75,7 @@ public class main {
 								
 								switch (choose) {
 								case 1:
+									categoryRepo.insert_category();
 									productRepo.insert();
 									break;
 								case 2:
