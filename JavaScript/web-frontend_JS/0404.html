@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> javascript & DOM API </h1>
+    <h2><a href="demo.html">back</a></h2>
+    <ul>
+    <li><a href="0101.html">01.Client Info</a></li>
+    <li><a href="0202.html">02.selectors</a></li>
+    <li><a href="0303.html">03.event driven</a></li>
+    </ul>
+    <script>
+    window.onload = function(){
+        now = new Date();
+        // GMT, UTC 지역마다 시간이 달라요 ~
+        console.log( now );
+        console.log( now.toLocaleString() );
+        console.log( now.toUTCString() );
+        console.log( now.getTime() );// <- nheiu use
+        console.log( typeof(now.getTime()) );
+
+        // sim sim hae
+        console.log(now.getFullYear() );
+        month = 'Jan';
+        switch( now.getMonth() ){
+            case 0: month = 'Jan'; break;
+            case 1: month = 'Jan'; break;
+            case 2: month = 'Jan'; break;
+            case 3: month = 'Jan'; break;
+            case 4: month = 'Jan'; break;
+            case 5: month = 'Jun'; break;
+            case 6: month = 'Jul'; break;
+            case 7: month = 'Aug'; break;
+            case 8: month = 'Sep'; break;
+            case 9: month = 'Oct'; break;
+            case 10: month = 'Nov'; break;
+            case 11: month = 'Dec'; break;
+        }
+        console.log(month);// start 0
+        console.log(now.getDate() );
+        console.log(now.getDay() ); // weekday
+
+        // homework : find method for date
+        console.log(now.getUTCMonth());
+        console.log(now.getUTCDate());
+        console.log(now.getTimezoneOffset()/(-60));
+
+    };
+
+    </script>
+
+</body>
+</html>

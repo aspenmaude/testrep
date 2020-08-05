@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> javascript & DOM API </h1>
+    <h2><a href="demo.html">back</a></h2>
+선택하면 menu(option) 이 달라진다.
+dynamic selection 
+<form id="relate">
+    <select name="location" onchange="redirect(this.selectedIndex);">
+        <option>Hanoi</option>
+        <option>HCMC</option>
+        <option>DatLat</option>
+    </select>
+    <select name="building">
+        <option>VinCOM</option>
+        <option>Player</option>
+        <option>BatDongSan</option>
+    </select>
+    <input type="submit" name="gourl" value="Go" onclick="gothere();">
+</form>
+
+<script>
+window.onload = function(){
+    // 각 지역(location)의 건물(buiding) 목록 만들기
+    // 1. location 몇 개 ?
+    relate = document.getElementById('relate');
+    loc = relate.location.length;// 개수 <option>
+    // 2. 목록 만들기 by Array
+    selectionGroup = new Array();
+    // Java's Array 미리 개수를 정해야 하는데
+    // JS's Array dynamic 하나씩 계속 추가 할 수 있다.
+    // 2 차 배열 ( 2D Array )
+    for( var i=0; i < loc; ++i){
+        selectionGroup[i] = new Array();
+    }
+    // add Options of select element
+    selectionGroup[0][0] = new Option('VinCom','vincom');
+    selectionGroup[0][1] = new Option('EMART','emart');
+    selectionGroup[0][2] = new Option('BIGC','bigc');
+
+    selectionGroup[1][0] = new Option('YaYa','yaya');
+    selectionGroup[1][1] = new Option('DaDa','dada');
+    selectionGroup[1][2] = new Option('TaTa','tata');
+
+    selectionGroup[2][0] = new Option('XIN','xin');
+    selectionGroup[2][1] = new Option('CHAO','chao');
+    selectionGroup[2][2] = new Option('BUISANG','buisang');
+
+    temp = relate.building;
+    console.log(temp);
+};
+function redirect(idx){
+    console.log(idx);
+    // chainning . . . . . .
+    building = document.getElementById('relate').building;
+    for(var i=0; i < building.length - 1 ; ++i){
+        building[i] = null;// to change
+    }
+    // fill option's values
+    for(var o = 0; o < selectionGroup[idx].length; ++o){
+        building.options[o] = //selectionGroup[idx][o];
+        new Option(
+            selectionGroup[idx][o].text,
+            selectionGroup[idx][o].value
+        );
+    }
+    // selected ~
+    building.options[0].selected = true;
+}
+</script>
+
+<ul>
+        <li><a href="0101.html">01.Client Info</a></li>
+        <li><a href="0202.html">02.selectors</a></li>
+        <li><a href="0303.html">03.event driven</a></li>
+        <li><a href="0404.html">04.date</a></li>
+        <li><a href="0505.html">05.marquee</a></li>
+        <li><a href="0606.html">06.form validate</a></li>
+        <li><a href="0707.html">07.Fade In color</a></li>
+        <li><a href="0808.html">08.right click</a></li>
+        <li><a href="0909.html">09.context menu</a></li>
+        <li><a href="1010.html">10.</a></li>
+    </ul>
+
+</body>
+</html>

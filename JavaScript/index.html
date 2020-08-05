@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <form method="POST" action="" onsubmit="return validate(this);">
+        <input type="text" name="name" required>
+        <input type="email" name="email">
+        <input type="password" name="pw">
+        <input type="submit" name="send" >
+    </form>            -->
+
+    <!-- <div id="box" style="width: 200px;height: 200px;">
+        aksdnkasndaksdn
+        asdasdasdads
+    </div> -->
+
+                            <!--  action : URL of server -->
+                            <!-- enctype: multipart/form-data UPLOAD FILE -->
+        <!-- <h1> jAVA SCRIPT</h1>
+        <h2><a href="https://www.google.com.vn/">back</a></h2> -->
+        <!-- <div id="context" style="position: absolute; display: none;">
+            <a href="#">Yes</a>
+            <a href="#">No</a>
+     
+        </div> -->
+
+        <!-- <form id="relate">
+            <select name="location" onchange="redirect(this.selectedIndex)">
+                <option>Hanoi</option>
+                <option>HCM</option>
+                <option>Da Lat</option>
+            </select>
+            <select name="building" onchange="redirect(this.selectedIndex)">
+                <option>Vincom</option>
+                <option>Player</option>
+                <option>BatDongSan</option>
+            </select>
+            <input type="submit" name="gourl" value="Go">
+        </form> -->
+    <h1>Javascript and DOM HTML</h1>
+    <h2><a href="demo.html">back</a></h2>
+    <img id="finger" src="finger.jpg" alt="">
+    <img id="finger1" src="finger.jpg" alt="" style="opacity: 0">
+</body>
+<script>
+    window.onload = function(){
+        fadeIn(document.querySelector('#finger'));
+        fadeOut(document.querySelector('#finger1'))
+    }
+
+    function fadeIn(img){ // từ đậm tới mờ dần
+        var op = 1; // setTimeout compare setInterval
+        var timer = setInterval(function(){ // setInterval set time
+            if(op <= 0.1){
+                clearInterval(timer);  // dừng lại khi op = 0.1
+            }
+            img.style.opacity = op;
+            img.style.filter = 'alpha(opacity=)' + (op*100) +')'; 
+            op -= op*0.1
+        },250) // (hamso, giay)Set time cho đậm dần hoặc mờ đần    
+    }
+
+    function fadeOut(img){ // mờ tới đậm
+        var op = 0.1;
+        var timer = setInterval(function(){
+            if(op >= 1){
+                clearInterval(timer);  // dừng lại khi op = 0.1
+            }
+            img.style.opacity = op;
+            img.style.filter = 'alpha(opacity=)' + (op*100) +')'; 
+            op += op*0.1
+        },250) // (hamso, giay)Set time cho đậm dần hoặc mờ đần    
+    }
+    // window.onload = function() {
+    //         relate = document.getElementById('relate');
+    //         loc = relate.location.length;
+    //         console.log(loc);
+
+    //         selectionGroup = new Array();
+    //         for (var i =0; i < loc;++i){
+    //             selectionGroup[i] = new Array();
+    //         }
+    //         selectionGroup[0][0] = new Option('Vincom','Vincom');
+    //         selectionGroup[0][1] = new Option('EMART','emart');
+    //         selectionGroup[0][2] = new Option('BIGC','bigc');
+            
+    //         selectionGroup[1][0] = new Option('Yaya','yaya');
+    //         selectionGroup[1][1] = new Option('DADA','dada');
+    //         selectionGroup[1][2] = new Option('TATA','tata');
+
+    //         selectionGroup[2][0] = new Option('VI','vi');
+    //         selectionGroup[2][1] = new Option('EM','em');
+    //         selectionGroup[2][2] = new Option('BI','bi');
+
+    //         temp = relate.building;
+    //         console.log(temp)
+
+    //     }
+    //     function redirect(idx){
+    //         console.log(idx);
+    //         building = document.getElementById('relate').building;
+    //         for (var i=0; i < building.length - 1; ++i ){
+    //             building[i]  = null;
+    //         }
+
+    //         for (var o  = 0; o < selectionGroup[idx].length; ++o){
+    //             building.options[o] = 
+    //             new Option(
+    //               selectionGroup[idx][o].text,
+    //               selectionGroup[idx][o].value,
+    //             );
+    //         }
+    //         building.options[0].selected = true;
+    //     }
+
+                // window.onload = function() {
+        //     pop = document.querySelector('#context');
+        //     document.oncontextmenu = contextShow; // right click click right hien menu
+        //     document.onclick = contextHide; // left click cilck trai bien mat
+        // }
+
+        // function contextShow(){
+        //     pop.style.top = event.clientY +  document.body.scrollTop + 'px'; // clientY là vị trí hiện tại, Scroll là độ dài của trang
+        //     pop.style.left = event.clientX +  document.body.scrollLeft +'px';
+        //     pop.style.display= 'block';
+        //     return false;  // mat menu mac dinh
+        // }
+
+        // function contextHide(){
+        //     pop.style.display = 'none';
+        // }
+        // window.onload = function() {
+        //     document.captureEvents(Event.MOUSEDOWN);
+        //     document.onmousedown = MouseEvent; // or clickEvent
+        // }
+
+        // function clickEvent(){
+        //     console.log(event.button);
+        //     if ((event.button == 2) || (event.button == 3)){
+        //         alert('012 chuot phai ');
+        //     }
+
+        // }
+
+        // function MouseEvent(e){
+        //     console.log(e.which);
+        //     if (e.which == 1)
+        //         console.log('left');
+        //     if (e.which == 2)
+        //         console.log('mid');
+        //     if (e.which == 3){
+        //         console.log('right');
+        //         return false;
+        //     }
+            
+        //  }
+        // window.onload = function(){
+        //     box = document.querySelector('#box');
+        //     // background-color
+        //     box.style.backgroundColor = '#f00';
+        // };
+        
+        // function toHex(cv){
+        //     var hexChar = '0123456789ABCDEF';
+        //     if (cv < 0) {
+        //         return '00';  // <-- 1 byte
+        //     }
+        //     if (cv > 255){
+        //         return 'FF';
+        //     }
+        // var first = Math.floor(cv / 16); // <-- high
+        // var second = cv % 16;  // <-- low
+        
+        // result = hexChar.charAt(first) + hexChar.charAt(second)
+        // return result;  // <-- 1 byte hexa 2 digits
+        // }
+
+         
+
+        
+
+        // function validate(form){
+        //     var alphadigit = '';
+        //     alphadigit += '1234567890';
+        //     alphadigit += 'qwertyuiopasdfghjklzxcvbnm';
+        //     alphadigit += 'QWERTYUIOPASDFGHJKLZXCVBNM';
+        //     console.log(form.name.value);
+        //     console.log(form.email.value);
+        //     console.log(form.pw.value);
+            
+
+        //     for (var i=0; i < form.name.value.length; ++i){
+        //         if (alphadigit.indexOf(form.name.value.substring(i,i+1)) == -1){
+        //             console.log(alphadigit.indexOf(form.name.value.substring(i,i+1)) ); 
+        //             alert('only input alphabet and digit');
+        //             form.name.focus(); // di chuyen lai cusor
+        //         }
+        //     }
+            
+
+        //     if(form.name.value.length > 12){
+        //         alert("Input enoung 16 key");
+        //     }
+            
+
+        //     return false; // ko gui den server
+
+        //     // USER can input only alphadigit, digit
+        // }
+
+        // function asciivaild(f){
+        //     uname = f.name.value;
+        //     length = uname.length;
+        //     for(var i=0; i < length; ++i ){
+        //         ch = uname.charCodeArt(i);
+
+        //         if (0 <= ch && ch < 128){
+        //             console.log(ch);
+        //         }
+        //     }
+        // }
+        // home work: find method for date
+         // home work: find pointer position
+
+        // window.onload = function(){ 
+        //     alert('page load');
+        //     user = confirm('start your page ?');
+        //     if (user){
+                
+        //     }else{
+                
+        //     }
+        // }
+        // window.onload =function(){
+        //     now = new Date(); // GMT, UTC
+        //     console.log(now);
+        //     console.log(now.toLocaleString());
+        //     console.log(now.toUTCString());
+        //     console.log(now.getTime());
+        //     console.log(typeof(now.getTime()));
+
+        //     console.log(now.getFullYear());
+        //     console.log(now.getMonth());    //start 0
+        //     console.log(now.getDate());
+        //     console.log(now.getDay());  // weekday
+         
+
+
+            // header = document.getElementsByTagName('header');
+            // console.log(header[0]);
+
+            // divs = document.getElementsByTagName('div');
+            // for (var i=0; i < divs.length; i++){
+            //     console.log(divs[i]);
+            // }
+            // console.log(screen);// thong tin page hien tai
+            // console.log(screen.width);
+            // console.log(screen.height);
+
+            // not defined is error
+            // undifine means empty
+            
+
+            // console.log(navigator); // thong tin web browser
+            // console.log(navigator.productSub);
+            // console.log(navigator['productSub']);
+
+            // console.log(document);
+            // list = document.querySelector(' trong day la ten tag name');
+            // list = document.querySelectorAll(' trong day la ten tag name'); // Tim nhiều phần tử trong cùng 1 lúc
+            // console.log(list);
+
+
+        // }
+</script>
+</html>

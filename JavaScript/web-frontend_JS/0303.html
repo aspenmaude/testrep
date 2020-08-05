@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> javascript & DOM API </h1>
+    <h2><a href="demo.html">back</a></h2>
+    <ul>
+    <li><a href="0101.html">01.Client Info</a></li>
+    <li><a href="0202.html">02.selectors</a></li>
+    <li><a href="0303.html">03.event driven</a></li>
+    </ul>
+
+    Event driven
+    - keyboard, mouse
+    <div id="dclassic" style="width: 100px; height: 100px; border: 1px dashed #0ff;"></div>
+    <div id="dinline" onclick="chgColor(this);" style="width: 100px; height: 100px; border: 1px dashed #0f0;"></div>
+    <div id="dstandard" style="width: 100px; height: 100px; border: 1px dashed #f0f;"></div>
+
+    이벤트(event)가 발생되면
+    이벤트 객체가 생긴다.
+    - about 이벤트 정보들이 있어요
+
+
+    <script>
+    window.onload = function(){
+          // standard : regist event handler 
+          dstandard = document.querySelector('#dstandard');
+  dstandard.addEventListener('click',function(e){
+      // home work : what position mouse point ?
+    console.log(e);// get position mouse point 
+  });
+
+        dclassic = document.getElementById('dclassic');
+        //on{event type/name}
+        dclassic.onclick = function(){
+            // hom nay : home work make toggle
+            var color = this.style.background;
+            if( color == '#f00'){
+                color = '#0ff';
+            }else{
+                color = '#f00';
+            }
+            this.style.background = color;
+        };
+        //toggle
+    };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+    // get data from user
+    // simply request Page -> GET
+    // hidden data -> POST (login)
+    HTML5 input type 이 매우 다양하다....
+    <form method="GET" action="" onsubmit="return validate(this);">
+        <input type="text" name="name" required>
+        <input type="email" name="email">
+        <input type="password" name="pw">
+        <input type="submit" vlaue="SEND">
+    </form>
+
+    // Unicode : 여러 나라들의 언어를 정의
+    // ASCII : english 만 정의
+        function asciivaild(f){
+            uname = f.name.value;
+            length = uname.length;
+            for( var i=0; i < length; ++i){
+                ch = uname.charCodeAt(i);
+                // return number of character in ASCII table
+                // ASCII defined alphabet, number, symbol
+                if( 0 <= ch && ch < 128){
+                    // is ASCII character
+                    console.log(ch);
+                }
+            }
+        }
+    
+        function validate(form){
+            var alphadigit = '';
+            alphadigit += '1234567890';
+            alphadigit += 'qwertyuiopasdfghjklzxcvbnm';
+            alphadigit += 'QAZXSWEDCVFRTGBNHYUJMKILOP';
+            // user can input only alphabet, digit
+    // 사용자의 ID 는 12글자 이상 입력되어야 한다.
+    // 사용자의 암호는 영문자, 특수문자 섞어서 16글자이어야 한다.
+            for(var i=0; i<form.name.value.length; ++i){
+            if(alphadigit
+           .indexOf(form.name.value.substring(i,i+1))
+           == -1){
+                alert('only input alphabet and digit');
+                form.name.focus();// move cursor 
+                }
+            }
+            return false; // stop send to server
+        }
+    

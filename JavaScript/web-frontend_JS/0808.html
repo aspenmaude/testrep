@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> javascript & DOM API </h1>
+    <h2><a href="demo.html">back</a></h2>
+
+<script>
+window.onload = function(){
+    // 나는 mouse 이벤트를 확인할 것이다.
+    document.captureEvents(Event.MOUSEDOWN);
+    document.onmousedown = mouseEvent;// call function
+};
+function clickEvent(){// without param
+    console.log(event.button);// 0, 1, 2,
+    if((event.button == 2) || (event.button==3)){
+        alert('감히 클릭하는 것이냐~');
+    }
+}
+
+// 이벤트가 생기면 event object pass to your function
+function mouseEvent(e){
+    console.log(e.which);// which ?
+    if( e.which == 1){
+        console.log('left');
+    }
+    if( e.which == 2){
+        console.log('wheel');
+    }
+    if( e.which == 3){// 4,5,6
+        console.log('right');
+        alert('can use right click');
+        return false;// stop or other process
+    }
+}
+</script>
+
+<ul>
+        <li><a href="0101.html">01.Client Info</a></li>
+        <li><a href="0202.html">02.selectors</a></li>
+        <li><a href="0303.html">03.event driven</a></li>
+        <li><a href="0404.html">04.date</a></li>
+        <li><a href="0505.html">05.marquee</a></li>
+        <li><a href="0606.html">06.form validate</a></li>
+        <li><a href="0707.html">07. Fade In color</a></li>
+        <li><a href="0808.html">08. right click</a></li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> javascript & DOM API </h1>
+    <h2><a href="demo.html">back</a></h2>
+<div 
+id="context" 
+style="position:absolute;display:none;top:100px;left:140px;">
+<a href="#">Login/out</a><br/>
+<a href="#">- find login id</a><br/>
+<a href="#">- find login pw</a><br/>
+<a href="#">Search</a><br/>
+</div>
+// 위치(position)
+<script>
+    // context menu : show when right click
+window.onload = function(){
+    pop = document.querySelector('#context');
+    // event
+    document.oncontextmenu = contextShow;//right click
+    document.onclick = contextHide;//left click
+};
+// 멋지지 않아요 ? 웹은 멋져~
+
+function contextShow(){
+    // change position of context menu customizing
+    // 마우스가 클릭된 위치에서 나타난다.
+    pop.style.top = event.clientY + document.body.scrollTop + 'px';
+    pop.style.left = event.clientX + document.body.scrollLeft + 'px';
+    pop.style.display = 'block';
+    return false;// not show default context menu
+}
+function contextHide(){
+    pop.style.display = 'none';
+}
+</script>
+
+<ul>
+        <li><a href="0101.html">01.Client Info</a></li>
+        <li><a href="0202.html">02.selectors</a></li>
+        <li><a href="0303.html">03.event driven</a></li>
+        <li><a href="0404.html">04.date</a></li>
+        <li><a href="0505.html">05.marquee</a></li>
+        <li><a href="0606.html">06.form validate</a></li>
+        <li><a href="0707.html">07. Fade In color</a></li>
+        <li><a href="0808.html">08. right click</a></li>
+        <li><a href="0909.html">09. context menu</a></li>
+    </ul>
+
+</body>
+</html>

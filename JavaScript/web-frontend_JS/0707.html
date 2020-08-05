@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> javascript & DOM API </h1>
+    <h2><a href="demo.html">back</a></h2>
+
+    <div id="box" style="width: 200px;height: 200px;">
+        // Fade In : 색 바꾸기
+        // 점점 엹어진다.. 짙어진다...
+    </div>
+<script>
+window.onload = function(){
+    // 천재다 ~ 나 가면 선물줄게요 ~
+    box = document.querySelector('#box');
+    // backgrund-color
+//    box.style.backgroundColor = '#f00';//ff0000
+//    console.log( toHexColor(255,0,0) );
+//    box.style.backgroundColor = toHexColor(0,255,0);
+    // CSS rgb(255,0,0)
+    setTimeout(fadeColor(box, 0,100,0, 255,255,255, 100, 0),20);
+
+};
+// 컴퓨터의 색깔은 정수(integer)로 표현한다.
+// 웹 브라우저는 색깔을 16진수(hex decimal)로 표현한다.
+// focus to me ~ ~
+function fadeColor(
+    el, // element
+    sr, // start red
+    sg, // start green
+    sb, // start blue
+    er, // end red
+    eg, // end green
+    eb, // end blue
+    step, // increament or decrement qty
+    i   // how many steps
+){
+    // 변하는 색의 값을 계산
+    var red = Math.floor( sr*((step-i)/step) + er*(i/step) );
+    var green = Math.floor( sg*((step-i)/step) + eg*(i/step) );
+    var blue = Math.floor( sb*((step-i)/step) + eb*(i/step) );
+    ++i;
+    // Wow ~ ~ this is CLOSURES ?
+    // 기억하나? 함수 안에 변수들은 다른 함수에서 사용할 수 없다...
+    return function(){ // without param
+        // can use red,green,blue
+        el.style.backgroundColor = toHexColor(red,green,blue);        
+        if( i>=step){
+            clearTimeout(timer);// stop
+        }else{
+            timer = setTimeout(fadeColor(el, sr,sg,sb,er,eg,eb,step,i), 20);
+            // 매번 0.2초 마다 실행된다.
+            // 함수에서 함수가 계속 호출된다.
+        }
+    };
+}
+
+function toHexColor(red,green,blue){
+    // parameter is Decimal number (Integer)
+    return '#'+toHex(red)+toHex(green)+toHex(blue);
+}
+
+function toHex(cv){
+    var hexChar = '0123456789ABCDEF';//<-- Hexa
+    if( cv < 0 ){
+        return '00';// <-- 1 byte
+    }
+    if(  cv > 255 ){
+        return 'FF';
+    }
+    // 245 / 16 -> Hex 2 digit
+    var first = Math.floor(cv / 16);//<-- high    
+    var second = cv % 16;//<-- low    
+    result = hexChar.charAt(first) + hexChar.charAt(second);
+    return result;// <-- 1byte Hexa 2 digits
+}
+
+
+
+</script>
+
+<ul>
+        <li><a href="0101.html">01.Client Info</a></li>
+        <li><a href="0202.html">02.selectors</a></li>
+        <li><a href="0303.html">03.event driven</a></li>
+        <li><a href="0404.html">04.date</a></li>
+        <li><a href="0505.html">05.marquee</a></li>
+        <li><a href="0606.html">06.form validate</a></li>
+        <li><a href="0707.html">07. Fade In color</a></li>
+    </ul>
+
+</body>
+</html>

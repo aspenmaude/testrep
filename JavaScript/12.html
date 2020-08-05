@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript and DOM HTML</h1>
+    <h2><a href="demo.html">back</a></h2>
+    <p>Tree menu collaspe and sliding menu</p>
+
+    <div id="container">
+        <nav id="sideBar" style="position: absolute; width: 200px; left: -180px;" onmouseover="show()" onmouseout="hide()">
+            <div>   <!--main menu -->
+                <img src="finger.jpg" id="i1">
+                <a href="#" onclick="view('s1')">Main-01</a>
+                <div class="submenu" id="s1" style="position: relative; left: 50px; display: none;"> <!--sub menu -->
+                    <img src="finger.jpg" name="i1">
+                    <a href="#">Sub-01</a><br/>
+                    <img src="finger.jpg" name="i1">
+                    <a href="#">Sub-02</a><br/>
+                    <img src="finger.jpg" name="i1">
+                    <a href="#">Sub-03</a>
+                </div>
+            </div>
+
+            <div>
+                <img src="finger.jpg" alt="" id="i2">
+                <a href="#" onclick="view('s2')">Main-02</a>
+
+                <div class="submenu" id="s2" style="position: relative; left: 50px; display: none;">
+                <p>
+                        <img src="finger.jpg" name="i2">
+                        <a href="#">Sub-01</a>
+                </p> 
+                <p>
+                        <img src="finger.jpg" name="i2">
+                        <a href="#">Sub-02</a><br/>
+                    </p>
+                    <p>
+                        <img src="finger.jpg" name="i2">
+                        <a href="#">Sub-03</a>
+                    </p>
+
+                </div>
+            </div>
+        </nav>
+    </div>  
+</body>
+<script>
+    window.onload = function(){
+        
+    }
+    var time_show; // show
+    var time_hide // hide
+    function show(){
+        if(time_hide != undefined){
+            clearTimeout(time_hide); // you die~
+        }
+        sideBar = document.querySelector('#sideBar');
+        s = sideBar.style.left; // is string
+        nleft = parseInt(s.replace('px',''));
+        if (nleft < 0){
+            nleft += 4;
+            sideBar.style.left = nleft+'px';
+        }
+        else{
+            clearTimeout(time_hide);    // stop when left 0;
+        }
+        time_show = setTimeout(show,10); // loop khi maf call back cos tham so thi nhat dinh phai viet ten ham nam trong dau nhay don 
+    }
+    function hide(){
+        if(time_show != undefined){
+            clearTimeout(time_show); // you die~
+        }
+        sideBar = document.querySelector('#sideBar');
+        s = sideBar.style.left; // is string
+        nleft = parseInt(s.replace('px',''));
+        if (nleft > -180){
+            nleft -= 4;
+            sideBar.style.left = nleft+'px';
+        }
+        else{
+            clearTimeout(time_show);    // stop when left 0;
+        }
+        time_hide = setTimeout(hide,10);
+    }
+    function view(divId){
+        divs = document.querySelectorAll('.submenu')
+
+        for (var i=0; i < divs.length; ++i)
+        {
+            console.log(divs[i])
+            if (divs[i].id == divId) {
+                if(divs[i].style.display == 'block'){
+                    divs[i].style.display = 'none';
+                }    
+                else{
+                    divs[i].style.display = 'block';
+                }     
+            }
+            else
+            {
+                divs[i].style.display = 'none';
+            }
+
+        }
+
+    }
+
+
+</script>
+</html>
