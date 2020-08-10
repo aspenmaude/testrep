@@ -1,0 +1,17 @@
+Ràng buộc:
+
+Web Project:
+	1. API(s):
+		Web browser:  Front-end
+		Web Server:  back-end
+		Web Application server 
+		Database server
+	
+	2. Protocol(s):
+			HTTP(S):   Browser -> web server 
+			AJP:       Web server -> Was
+		TCP/UDP
+		
+		
+Framework ? (Giup config)
+	API

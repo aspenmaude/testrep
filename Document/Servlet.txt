@@ -1,0 +1,38 @@
+Servlet:
+
+Servlet Content Interface
+
+init( ServletConfig config)					
+service() 									(Qly life cycle)
+destroy()									Khi kết thúc chương trình
+getServiceConfig() return this.config    	(Qly service Content)
+getServletInfo()							(Qly service Content)
+
+Deploy configuration in "web.xml"
+
+<servlet> 
+		<servlet-name> 	aliasname </servlet-name>
+			FQN
+	
+ </servlet> 
+ 
+ <servlet-mapping> 
+				aliasname
+				(contextRoot)/URL
+		
+  </servlet-mapping> 
+  
+  abstract                    Generic Servlet: 
+  
+  Servlet
+  
+  Tomcat(Was)   -->   Java Program
+  
+  
+  service() : request,....
+  
+  HttpServlet provide support service
+  
+  
+  
+  

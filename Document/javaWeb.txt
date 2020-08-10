@@ -1,0 +1,57 @@
+HTTP: 
+Protocol
+
+					Web browser:  		-->	request -->     (???)            						Web Server
+												Content Type(UTF-8)<---reponse	(???)
+
+												
+Web application:                    --HTTP Proxy (??)--                    Web Server
+							Proxy (dùng cho quản lý server ???)
+
+				{	Method GET: (Có thể xem trên url)
+Request			{	Method POST: (Dùng để gửi đi mà values được ẩn ) (file nặng, dung lượng lớn dùng POST) (Dùng cho login)
+
+VD:  
+		<form method="POST" encrytype="multipart/form-data">
+		
+		--------------------------------------------------------------------------------------------
+		
+Web
+
+	Serverlet Programming: 
+	CGI: (Common Gateway Interface): (web sv <--> web application) (trao đổi dùng CGI)
+	-->Compile
+	
+	Script -> Script engine -> script
+	
+	
+JavaWeb: 
+	WebSV vs Java programming (?? Dùng JVM Java Virtual Machine để connect tuy nhiên JVM ko theo quy luật của CGI nên
+	WebSV vs Java programming ko thể connect dc)
+	
+	WebSV vs Java programming  (tạo 1 programm riêng  theo quy luật của CGI và kết nối vs JVM dc gọi là Serverlet container)
+	
+	Use Serverlet Java
+	Work Application... 
+	
+	Serverlet container: (Tomcat, Jetty, Jeus)  
+	hay còn gọi là WAS (web application server)
+	
+	
+Tomcat:
+
+
+bin: start.bat and shutdown.bat để khởi động và tắt tomcat
+webApps: Chứa web application
+conf: context.xml (web app dc cài đặt trong đó)
+		server.xml (Lưu ??)
+		web.xml (Lưu điểm chung trong đó)
+
+Config web.xml
+	search: web xmlns 3.1 
+
+
+
+
+	
+	
