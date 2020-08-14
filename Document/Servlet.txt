@@ -32,7 +32,24 @@ Deploy configuration in "web.xml"
   service() : request,....
   
   HttpServlet provide support service
-  
+
+----------------
+	Connect Servlet : 1. web.xml or 2.Context.xml
+	@WebServlet("/Category/update") 			// uri
+  	response.sendRedirect(path Đường dẫn) 	(dùng để quay lại trang bạn muốn)				// response phan hoi tu server đường dẫn từ thư mục góc
+
+Cookie (be saved in client)
+	?? setcookie ??? where ???
+	cookie class
+	response.addcookie
+	request.getcookie
+
+Session (be saved in server)
+	request.getSession();
+	session.setAtribute()
+	session.getAtribute()
+	
+
   
   
   

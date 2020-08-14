@@ -1,0 +1,61 @@
+Cookie (be saved in client)
+	?? setcookie ??? where ???
+	cookie class
+	response.addcookie
+	request.getcookie
+
+Session (be saved in server)
+	request.getSession();
+	session.setAtribute()
+	session.getAtribute()
+	
+------------
+
+JSP
+
+   vd : fileJSP
+  <!-- Dung de code java-->  
+   <!--fileds and methond phai co ?,!-->  
+ <%!						phai co cham thang
+ 	int version = 1;
+ 	private void todo(){}
+ %> 
+
+
+file index trong link a<href"/aaa/aa/"> thì là @webservlet("/aaa/aa/")
+
+file servlet thì 
+	request.setAttribute("Tên dùng để liên kết giữa servlet và JSP", contact); (bên file JSP sẽ getAtribute)
+		
+		String prefix = "/WEB-INF/views/";
+		String postfix = ".jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(prefix + "tenfileJSp trong thư mục views" + postfix);
+		dispatcher.forward(request, response);
+		
+		
+		response.setContentType("text/html;charset=UTF-8");
+		
+
+Lấy đường dẫn thư mục gốc:
+ <%
+    	String contextPath = request.getContextPath();  ==>  (/Tên project)
+ %>	
+ 
+Lấy dữ liệu từ Servlet
+
+ <%
+ 		List<Menu> menulist = (List<Menu>) request.getAttribute("MenuList");
+ 		int length = menulist.size();
+ %>
+ 
+ <%for(Menu menu : menuList){ %>
+	<div >
+		<div >
+			<h2><%=menu.getMuname()%></h2>
+			<p><%=menu.getDetails()%></p>
+		</div>
+	</div>
+	<%}%>
+	
+	
+	

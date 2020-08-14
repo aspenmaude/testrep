@@ -8,7 +8,7 @@ Protocol
 Web application:                    --HTTP Proxy (??)--                    Web Server
 							Proxy (dùng cho quản lý server ???)
 
-				{	Method GET: (Có thể xem trên url)
+				{	Method GET: (Dùng để gửi đi Có thể xem trên url)
 Request			{	Method POST: (Dùng để gửi đi mà values được ẩn ) (file nặng, dung lượng lớn dùng POST) (Dùng cho login)
 
 VD:  
