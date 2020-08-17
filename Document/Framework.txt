@@ -1,0 +1,4 @@
+DB Framework
+
+	mybatis: already set db tables by DB architector
+	Hibernate: new db tables
