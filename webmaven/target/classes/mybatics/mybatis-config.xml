@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+	
+<configuration>
+	<typeAliases>
+		<typeAlias type="tp.kits3.livedinner.vo.book" alias="bookVo"/>
+
+		
+	</typeAliases>
+	
+	<!-- 2. config DB connection info like Tomcat context.xml datasource -->
+	<environments default="development">
+		
+		<environment id="development">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driven" value="org.mariadb.Driver"/>
+				<property name="url" value="jdbc:mariadb://localhost:3306/livedinner"/>
+				<property name="username" value="root"/>
+				<property name="password" value="root123"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!-- mapper for each table -->
+	
+	<mappers>
+	<!-- from/src/main -->
+		<mapper resource="mybatis/mappers/bookMapper.xml" />
+	</mappers>
+	
+	
+</configuration>
