@@ -1,0 +1,6 @@
+24/8 -> 28/8: project designer
+31/8 -> 25/9: implements project
+28,29/9: debugging project
+30/9: complettion ceremony
+
+goto intern

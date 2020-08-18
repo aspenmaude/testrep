@@ -2,3 +2,43 @@ DB Framework
 
 	mybatis: already set db tables by DB architector
 	Hibernate: new db tables
+mybatis:
+	Structure Query Language SQL  
+	customizing tối ưu hóa ở database 
+	có thể dễ dàng edit CRUD
+	có thể dễ dàng edit querySQL
+	Tạo trc trong mapper(mybatis.mapper)
+	use JDBC
+Hibernate:
+	use JPA  (Java Persistence API) base Spring Boot
+	xử lý database = 1 kiểu nên ko viết SQL
+	Create table, alter, drop ????
+	use when new project or prototype project
+	 
+Spring boot -> development     
+Spring MVC -> deploy
+	
+
+
+--------------------
+
+Map: <key, value> as name			// key= name
+
+Programming : 
+	create methods, functions,..
+	Phuong phap phan biet: parameter ? return ? mehod'name ?.
+
+Multi Action
+	action phân biệt
+	servlet use URI or request parameter
+
+use spring 
+	Eclipse MarketPlace
+		-search Spring
+
+-------------
+
+
+
+
+		
