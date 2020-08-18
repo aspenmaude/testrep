@@ -1,12 +1,12 @@
 Spring MVC:
 
-	/src/main/java : java sources,controller,service, 
+	/src/main/java : java sources,controller,service, Dao, model
 				
 	/src/main/resource: config file
 				/mybatis/mapperes
-					/log4j.xml
+				/log4j.xml
 	/src/main/webapp: web contents
-	/src/main/webapp/resources:  *.js *.css,*.html,img,...
+	/src/main/webapp/resources:  *.js *.css,*.html,img,*.jsp...
 	/src/main/webapp/WEB-INF: *.classes,
 			/view/*.jsp,
 			/sping/*.xml,:(config.xml)
