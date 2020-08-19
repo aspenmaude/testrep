@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
- <% String contextPath = request.getContextPath(); %>
+
  
 <!DOCTYPE html>
 <html lang="en"><!-- Basic -->
@@ -19,13 +19,13 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="resources/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="resources/images/apple-touch-icon.png">
 
 	<!-- Site CSS -->
-    <link rel="stylesheet" href="<%=contextPath %>/css/style.css">    
+    <link rel="stylesheet" href="resources/css/style.css">    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="<%=contextPath %>/css/custom.css">
+    <link rel="stylesheet" href="resources/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -34,38 +34,38 @@
 
 </head>
 
-<body>
+<body style="margin: 15px;">
 	<!-- Start header -->
 	<header>
 		<nav>
 			<div>
-				<a href="index.html">
-					<img src="<%=contextPath %>/images/logo.png" alt="" />
+				<a href="/livedinner/">
+					<img src="resources/images/logo.png" alt="" />
 				</a>
 				<button type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
 				  <span></span>
 				</button>
-				<div id="navbars-rs-food">
+					<div id="navbars-rs-food">
 					<ul>
-						<li><a href="/workShop/home">Home</a></li>
-						<li><a href="/workShop/Menu/list">Menu</a></li>
-						<li><a href="/workShop/about">About</a></li>
+						<li><a href="/livedinner/">Home</a></li>
+						<li><a href="/livedinner/menu">Menu</a></li>
+						<li><a href="/livedinner/about">About</a></li>
 						<li> <!-- main menu-->
 							<a href="#" id="dropdown-a" data-toggle="dropdown" onclick="view('page')">Pages</a><br/>
 							<div class="submenu" id="page" aria-labelledby="dropdown-a">
-								<a href="/workShop/page/reservation">Reservation</a><br/>
-								<a href="/workShop/page/stuff">Stuff</a><br/>
-								<a href="/workShop/page/gallery">Gallery</a>
+								<a href="/livedinner/reservation">Reservation</a><br/>
+								<a href="/livedinner/stuff">Stuff</a><br/>
+								<a href="/livedinner/gallery">Gallery</a>
 							</div>
 						</li>
 						<li>	<!-- main menu-->
 							<a href="#" id="dropdown-a" data-toggle="dropdown" onclick="view('blog')">Blog</a><br/>
 							<div class="submenu" id="blog" aria-labelledby="dropdown-a">
-								<a href="/workShop/blog">blog</a><br/>
-								<a href="/workShop/blogdetails">blogSingle</a>
+								<a href="/livedinner/blog">blog</a><br/>
+								<a href="/livedinner/blogdetails">blogSingle</a>
 							</div>
 						</li>
-						<li><a href="/workShop/Contact/list">Contact</a></li>
+						<li><a href="/livedinner/contact">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -185,7 +185,7 @@
 						<div>
 							<div>
 								<div>
-									<img src="<%=contextPath %>/images/quotations-button.png" alt="">
+									<img src="resources/images/quotations-button.png" alt="">
 								</div>
 								<h5><strong >Paul Mitchel</strong></h5>
 								<h6>Web Developer</h6>
@@ -193,7 +193,7 @@
 							</div>
 							<div >
 								<div>
-									<img src="<%=contextPath %>/images/quotations-button.png" alt="">
+									<img src="resources/images/quotations-button.png" alt="">
 								</div>
 								<h5><strong>Steve Fonsi</strong></h5>
 								<h6>Web Designer</h6>
@@ -201,7 +201,7 @@
 							</div>
 							<div >
 								<div>
-									<img src="<%=contextPath %>/images/quotations-button.png" alt="">
+									<img src="resources/images/quotations-button.png" alt="">
 								</div>
 								<h5><strong >Daniel vebar</strong></h5>
 								<h6>Seo Analyst</h6>
@@ -319,6 +319,6 @@
 
 	<!-- ALL JS FILES -->
     <!-- ALL PLUGINS -->
-    <script src="js/custom.js"></script>
+    <script src="resources/js/custom.js"></script>
 </body>
 </html>

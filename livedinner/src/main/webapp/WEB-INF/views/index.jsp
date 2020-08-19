@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+ 
  <!DOCTYPE html>
 <html lang="en"><!-- Basic -->
 <head>
@@ -20,9 +22,9 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png"> -->
 
 	<!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="resources/css/style.css">    
     <!-- Custom CSS for each page -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="resources/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -31,38 +33,38 @@
 
 </head>
 
-<body>
+<body style="margin: 15px;">
 	<!-- Start header -->
 	<header>
 		<nav>
-			<div class="container">
-				<a href="index.html">
-					<img src="images/logo.png" alt="" />
+			<div>
+				<a href="/livedinner/">
+					<img src="resources/images/logo.png" alt="" />
 				</a>
 				<button type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
 				  <span></span>
 				</button>
-				<div id="navbars-rs-food">
+					<div id="navbars-rs-food">
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="/workShop/Menu/list">Menu</a></li>
-						<li><a href="/workShop/about">About</a></li>
+						<li><a href="/livedinner/">Home</a></li>
+						<li><a href="/livedinner/menu">Menu</a></li>
+						<li><a href="/livedinner/about">About</a></li>
 						<li> <!-- main menu-->
 							<a href="#" id="dropdown-a" data-toggle="dropdown" onclick="view('page')">Pages</a><br/>
 							<div class="submenu" id="page" aria-labelledby="dropdown-a">
-								<a href="/workShop/page/reservation">Reservation</a><br/>
-								<a href="/workShop/page/stuff">Stuff</a><br/>
-								<a href="/workShop/page/gallery">Gallery</a>
+								<a href="/livedinner/reservation">Reservation</a><br/>
+								<a href="/livedinner/stuff">Stuff</a><br/>
+								<a href="/livedinner/gallery">Gallery</a>
 							</div>
 						</li>
 						<li>	<!-- main menu-->
 							<a href="#" id="dropdown-a" data-toggle="dropdown" onclick="view('blog')">Blog</a><br/>
 							<div class="submenu" id="blog" aria-labelledby="dropdown-a">
-								<a href="/workShop/blog">blog</a><br/>
-								<a href="/workShop/blogdetails">blogSingle</a>
+								<a href="/livedinner/blog">blog</a><br/>
+								<a href="/livedinner/blogdetails">blogSingle</a>
 							</div>
 						</li>
-						<li><a href="/workShop/Contact/list">Contact</a></li>
+						<li><a href="/livedinner/contact">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -75,7 +77,7 @@
 	<div id="slides">
 		<ul class="slideshow-container" >
 			<li class="mySlides fade">
-				<img src="images/slider-01.jpg" alt="">
+				<img src="<c:url value="resources/images/slider-01.jpg" />" alt="">
 				<div class="container">
 					<div class="content">
 						<div >
@@ -88,7 +90,7 @@
 				</div>
 			</li>
 			<li class="mySlides fade">
-				<img src="images/slider-02.jpg" alt="">
+				<img src="resources/images/slider-02.jpg" alt="">
 				<div class="container">
 					<div class="content">
 						<div>
@@ -101,7 +103,7 @@
 				</div>
 			</li>
 			<li class="mySlides fade">
-				<img src="images/slider-03.jpg" alt="">
+				<img src="resources/images/slider-03.jpg" alt="">
 				<div class="container">
 					<div class="content" >
 						<div >
@@ -140,7 +142,7 @@
 					</div>
 				</div>
 				<div class="about-content-right">
-					<img src="images/about-img.jpg" alt="" >
+					<img src="resources/images/about-img.jpg" alt="" >
 				</div>
 			</div>
 		</div>
@@ -185,7 +187,7 @@
 						<div  class="menubox" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 							<div class="image123">
 								<div class="image image1">
-									<img src="images/img-01.jpg" alt="Image">
+									<img src="resources/images/img-01.jpg" alt="Image">
 									<div class="menu-box-content" id="ct1">
 										<h4>Special Drinks 1</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -195,7 +197,7 @@
 								</div>
 								
 								<div class="image image2">
-									<img src="images/img-02.jpg" alt="Image">
+									<img src="resources/images/img-02.jpg" alt="Image">
 									<div class="menu-box-content" id="ct2">
 										<h4>Special Drinks 2</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -205,7 +207,7 @@
 								</div>
 								
 								<div class="image image3" >
-									<img src="images/img-03.jpg" alt="Image">
+									<img src="resources/images/img-03.jpg" alt="Image">
 									<div class="menu-box-content" id="ct3">
 										<h4>Special Drinks 3</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -217,7 +219,7 @@
 
 							<div class="image456" >
 								<div class="image image4">
-									<img src="images/img-04.jpg" alt="Image">
+									<img src="resources/images/img-04.jpg" alt="Image">
 									<div class="menu-box-content" id="ct4">
 										<h4>Special Lunch 1</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -227,7 +229,7 @@
 								</div>
 	
 								<div class="image image5">
-									<img src="images/img-05.jpg" alt="Image">
+									<img src="resources/images/img-05.jpg" alt="Image">
 									<div class="menu-box-content" id="ct5">
 										<h4>Special Lunch 2</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -237,7 +239,7 @@
 								</div>
 								
 								<div class="image image6">
-									<img src="images/img-06.jpg" alt="Image">
+									<img src="resources/images/img-06.jpg" alt="Image">
 									<div class="menu-box-content" id="ct6">
 										<h4>Special Lunch 3</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -249,7 +251,7 @@
 
 							<div class="image789" >
 								<div class="image image7">
-									<img src="images/img-07.jpg" alt="Image">
+									<img src="resources/images/img-07.jpg" alt="Image">
 									<div class="menu-box-content" id="ct7">
 										<h4>Special Dinner 1</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -259,7 +261,7 @@
 								</div>
 								
 								<div class="image image8">
-									<img src="images/img-08.jpg" alt="Image">
+									<img src="resources/images/img-08.jpg" alt="Image">
 									<div class="menu-box-content" id="ct8">
 										<h4>Special Dinner 2</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -269,7 +271,7 @@
 								</div>
 								
 								<div class="image image9">
-									<img src="images/img-09.jpg" alt="Image">
+									<img src="resources/images/img-09.jpg" alt="Image">
 									<div class="menu-box-content" id="ct9">
 										<h4>Special Dinner 3</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -284,7 +286,7 @@
 						<div class="menubox" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" style="display: none;">
 							<div class="image123">
 								<div class="image image1">
-									<img src="images/img-01.jpg" alt="Image">
+									<img src="resources/images/img-01.jpg" alt="Image">
 									<div class="menu-box-content" >
 										<h4>Special Drinks 1</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -294,7 +296,7 @@
 								</div>
 								
 								<div class="image image2">
-									<img src="images/img-02.jpg" alt="Image">
+									<img src="resources/images/img-02.jpg" alt="Image">
 									<div class="menu-box-content">
 										<h4>Special Drinks 2</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -304,7 +306,7 @@
 								</div>
 								
 								<div class="image image3" >
-									<img src="images/img-03.jpg" alt="Image">
+									<img src="resources/images/img-03.jpg" alt="Image">
 									<div class="menu-box-content">
 										<h4>Special Drinks 3</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -319,7 +321,7 @@
 						<div class="menubox" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" style="display: none;">
 							<div class="image456" >
 								<div class="image image4">
-									<img src="images/img-04.jpg" alt="Image">
+									<img src="resources/images/img-04.jpg" alt="Image">
 									<div class="menu-box-content">
 										<h4>Special Lunch 1</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -329,7 +331,7 @@
 								</div>
 	
 								<div class="image image5">
-									<img src="images/img-05.jpg" alt="Image">
+									<img src="resources/images/img-05.jpg" alt="Image">
 									<div class="menu-box-content">
 										<h4>Special Lunch 2</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -339,7 +341,7 @@
 								</div>
 								
 								<div class="image image6">
-									<img src="images/img-06.jpg" alt="Image">
+									<img src="resources/images/img-06.jpg" alt="Image">
 									<div class="menu-box-content">
 										<h4>Special Lunch 3</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -353,7 +355,7 @@
 						<div class="menubox" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" style="display: none;">
 							<div class="image789" >
 								<div class="image image7">
-									<img src="images/img-07.jpg" alt="Image">
+									<img src="resources/images/img-07.jpg" alt="Image">
 									<div class="menu-box-content">
 										<h4>Special Dinner 1</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -363,7 +365,7 @@
 								</div>
 								
 								<div class="image image8">
-									<img src="images/img-08.jpg" alt="Image">
+									<img src="resources/images/img-08.jpg" alt="Image">
 									<div class="menu-box-content">
 										<h4>Special Dinner 2</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -373,7 +375,7 @@
 								</div>
 								
 								<div class="image image9">
-									<img src="images/img-09.jpg" alt="Image">
+									<img src="resources/images/img-09.jpg" alt="Image">
 									<div class="menu-box-content">
 										<h4>Special Dinner 3</h4>
 										<p>Sed id magna vitae eros sagittis euismod.</p>
@@ -404,34 +406,34 @@
 			<div class="gallary-box">
 				<div>
 					<div >
-						<a href="images/gallery-img-01.jpg">
-							<img src="images/gallery-img-01.jpg" alt="Gallery Images">
+						<a href="resources/images/gallery-img-01.jpg">
+							<img src="resources/images/gallery-img-01.jpg" alt="Gallery Images">
 						</a>
 					</div>
 					<div >
-						<a href="images/gallery-img-02.jpg">
-							<img src="images/gallery-img-02.jpg" alt="Gallery Images">
+						<a href="resources/images/gallery-img-02.jpg">
+							<img src="resources/images/gallery-img-02.jpg" alt="Gallery Images">
 						</a>
 					</div>
 					<div >
-						<a href="images/gallery-img-03.jpg">
-							<img src="images/gallery-img-03.jpg" alt="Gallery Images">
+						<a href="resources/images/gallery-img-03.jpg">
+							<img src="resources/images/gallery-img-03.jpg" alt="Gallery Images">
 						</a>
 					</div>
 
 					<div >
-						<a href="images/gallery-img-04.jpg">
-							<img src="images/gallery-img-04.jpg" alt="Gallery Images">
+						<a href="resources/images/gallery-img-04.jpg">
+							<img src="resources/images/gallery-img-04.jpg" alt="Gallery Images">
 						</a>
 					</div>
 					<div >
-						<a href="images/gallery-img-05.jpg">
-							<img src="images/gallery-img-05.jpg" alt="Gallery Images">
+						<a href="resources/images/gallery-img-05.jpg">
+							<img src="resources/images/gallery-img-05.jpg" alt="Gallery Images">
 						</a>
 					</div> 
 					<div >
-						<a href="images/gallery-img-06.jpg">
-							<img src="images/gallery-img-06.jpg" alt="Gallery Images">
+						<a href="resources/images/gallery-img-06.jpg">
+							<img src="resources/images/gallery-img-06.jpg" alt="Gallery Images">
 						</a>
 					</div>
 				</div>
@@ -457,7 +459,7 @@
 						<div>
 							<div>
 								<div>
-									<img src="images/quotations-button.png" alt="">
+									<img src="resources/images/quotations-button.png" alt="">
 								</div>
 								<h5><strong >Paul Mitchel</strong></h5>
 								<h6>Web Developer</h6>
@@ -465,7 +467,7 @@
 							</div>
 							<div >
 								<div>
-									<img src="images/quotations-button.png" alt="">
+									<img src="resources/images/quotations-button.png" alt="">
 								</div>
 								<h5><strong>Steve Fonsi</strong></h5>
 								<h6>Web Designer</h6>
@@ -473,7 +475,7 @@
 							</div>
 							<div >
 								<div>
-									<img src="images/quotations-button.png" alt="">
+									<img src="resources/images/quotations-button.png" alt="">
 								</div>
 								<h5><strong >Daniel vebar</strong></h5>
 								<h6>Seo Analyst</h6>
@@ -591,6 +593,6 @@
 
 	<!-- ALL JS FILES -->
     <!-- ALL PLUGINS -->
-    <script src="js/custom.js"></script>
+    <script src="resources/js/custom.js"></script>
 </body>
 </html>

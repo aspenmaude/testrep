@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.contactMapper"><!-- like pakage of class-->
+	<resultMap type="contactVO" id="contactResult">
+		<result property="coid" column="coid"/>
+		<result property="coname" column="coname"/>
+		<result property="priphone" column="priphone"/>
+		<result property="subphone" column="subphone"/>
+		<result property="email" column="email"/>
+		<result property="address" column="address"/>
+		<result property="unused" column="unused"/>
+		<result property="opening" column="opening"/>
+		<result property="weekday" column="weekday"/>
+		<result property="weekend" column="weekend"/>
+		<result property="aboutus" column="aboutus"/>
+		<result property="latitude" column="latitude"/>
+		<result property="logitude" column="logitude"/>
+	</resultMap>
+	<!-- Make SQL Statment-->
+	
+	<!--List<Book> books = selectAll()-->
+	<select id="selectAll" resultMap="contactResult"><!-- mappers.bookMapper.selectAll-->
+		<![CDATA[
+			select * from contact order by coid desc
+		]]>
+	</select>
+	<!--selectOne(id=1)-->
+	<select id="selectOne" resultMap="contactResult" parameterType="int"><!-- mappers.bookMapper.selectOne-->
+		<![CDATA[
+			select * from contact where coid= #(id)
+		]]>
+	</select>
+	
+	<insert id="insert" parameterType="contactVO">
+		<![CDATA[
+			insert into contact (coname,priphone,email,address,unused,latitude) 
+			values
+			(#{coname},#{priphone},#{email},#{address},#{unused},#{latitude})
+		]]>
+	</insert>
+	
+	<update id="update" parameterType="contactVO">
+		<![CDATA[
+			update contact set
+			coname = #{coname},
+			subphone = #{subphone},
+			email = #{email},
+			address = #{address},
+			bknum = #{bknum},
+			unused = #{unused},
+			latitude = #{latitude} 
+			where coid=#{coid}
+		]]>
+	</update>
+	<delete id="delete" parameterType="int">
+		<![CDATA[
+			delete  from contact where coid= #(id)
+		]]>
+	</delete>
+</mapper>

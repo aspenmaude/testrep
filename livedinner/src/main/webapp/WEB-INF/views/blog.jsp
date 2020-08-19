@@ -18,13 +18,13 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="resources/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="resources/images/apple-touch-icon.png">
 
 	<!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="resources/css/style.css">    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="resources/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -33,38 +33,38 @@
 
 </head>
 
-<body>
+<body style="margin: 15px;">
 	<!-- Start header -->
 	<header>
 		<nav>
 			<div>
-				<a href="index.html">
-					<img src="images/logo.png" alt="" />
+				<a href="/livedinner/">
+					<img src="resources/images/logo.png" alt="" />
 				</a>
 				<button type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
 				  <span></span>
 				</button>
 					<div id="navbars-rs-food">
 					<ul>
-						<li><a href="/workShop/home">Home</a></li>
-						<li><a href="/workShop/Menu/list">Menu</a></li>
-						<li><a href="/workShop/about">About</a></li>
+						<li><a href="/livedinner/">Home</a></li>
+						<li><a href="/livedinner/menu">Menu</a></li>
+						<li><a href="/livedinner/about">About</a></li>
 						<li> <!-- main menu-->
 							<a href="#" id="dropdown-a" data-toggle="dropdown" onclick="view('page')">Pages</a><br/>
 							<div class="submenu" id="page" aria-labelledby="dropdown-a">
-								<a href="/workShop/page/reservation">Reservation</a><br/>
-								<a href="/workShop/page/stuff">Stuff</a><br/>
-								<a href="/workShop/page/gallery">Gallery</a>
+								<a href="/livedinner/reservation">Reservation</a><br/>
+								<a href="/livedinner/stuff">Stuff</a><br/>
+								<a href="/livedinner/gallery">Gallery</a>
 							</div>
 						</li>
 						<li>	<!-- main menu-->
 							<a href="#" id="dropdown-a" data-toggle="dropdown" onclick="view('blog')">Blog</a><br/>
 							<div class="submenu" id="blog" aria-labelledby="dropdown-a">
-								<a href="/workShop/blog">blog</a><br/>
-								<a href="/workShop/blogdetails">blogSingle</a>
+								<a href="/livedinner/blog">blog</a><br/>
+								<a href="/livedinner/blogdetails">blogSingle</a>
 							</div>
 						</li>
-						<li><a href="/workShop/Contact/list">Contact</a></li>
+						<li><a href="/livedinner/contact">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -99,7 +99,7 @@
 				<div >
 					<div >
 						<div >
-							<img src="images/blog-img-01.jpg" alt="">
+							<img src="resources/images/blog-img-01.jpg" alt="">
 						</div>
 						<div >
 							<h4>Duis feugiat neque sed dolor cursus.</h4>
@@ -117,7 +117,7 @@
 				<div >
 					<div >
 						<div >
-							<img src="images/blog-img-02.jpg" alt="">
+							<img src="resources/images/blog-img-02.jpg" alt="">
 						</div>
 						<div >
 							<h4>Duis feugiat neque sed dolor cursus.</h4>
@@ -135,7 +135,7 @@
 				<div >
 					<div >
 						<div >
-							<img src="images/blog-img-03.jpg" alt="">
+							<img src="resources/images/blog-img-03.jpg" alt="">
 						</div>
 						<div >
 							<h4>Duis feugiat neque sed dolor cursus.</h4>
@@ -153,7 +153,7 @@
 				<div >
 					<div >
 						<div >
-							<img src="images/blog-img-04.jpg" alt="">
+							<img src="resources/images/blog-img-04.jpg" alt="">
 						</div>
 						<div >
 							<h4>Duis feugiat neque sed dolor cursus.</h4>
@@ -171,7 +171,7 @@
 				<div >
 					<div >
 						<div >
-							<img src="images/blog-img-05.jpg" alt="">
+							<img src="resources/images/blog-img-05.jpg" alt="">
 						</div>
 						<div >
 							<h4>Duis feugiat neque sed dolor cursus.</h4>
@@ -189,7 +189,7 @@
 				<div >
 					<div >
 						<div >
-							<img src="images/blog-img-06.jpg" alt="">
+							<img src="resources/images/blog-img-06.jpg" alt="">
 						</div>
 						<div >
 							<h4>Duis feugiat neque sed dolor cursus.</h4>
@@ -207,7 +207,7 @@
 				<div >
 					<div >
 						<div >
-							<img src="images/blog-img-07.jpg" alt="">
+							<img src="resources/images/blog-img-07.jpg" alt="">
 						</div>
 						<div >
 							<h4>Duis feugiat neque sed dolor cursus.</h4>
@@ -225,7 +225,7 @@
 				<div >
 					<div >
 						<div >
-							<img src="images/blog-img-08.jpg" alt="">
+							<img src="resources/images/blog-img-08.jpg" alt="">
 						</div>
 						<div >
 							<h4>Duis feugiat neque sed dolor cursus.</h4>
@@ -243,7 +243,7 @@
 				<div >
 					<div >
 						<div >
-							<img src="images/blog-img-09.jpg" alt="">
+							<img src="resources/images/blog-img-09.jpg" alt="">
 						</div>
 						<div >
 							<h4>Duis feugiat neque sed dolor cursus.</h4>
@@ -358,6 +358,6 @@
 
 	<!-- ALL JS FILES -->
     <!-- ALL PLUGINS -->
-    <script src="js/custom.js"></script>
+    <script src="resources/js/custom.js"></script>
 </body>
 </html>
