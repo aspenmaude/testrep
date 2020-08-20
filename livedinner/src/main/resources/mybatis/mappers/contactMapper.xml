@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mappers.contactMapper"><!-- like pakage of class-->
 	<resultMap type="contactVO" id="contactResult">
@@ -22,7 +22,7 @@
 	<!--List<Book> books = selectAll()-->
 	<select id="selectAll" resultMap="contactResult"><!-- mappers.bookMapper.selectAll-->
 		<![CDATA[
-			select * from contact order by coid desc
+			select * from contact order by coid
 		]]>
 	</select>
 	<!--selectOne(id=1)-->
@@ -44,10 +44,9 @@
 		<![CDATA[
 			update contact set
 			coname = #{coname},
-			subphone = #{subphone},
+			priphone = #{priphone},
 			email = #{email},
 			address = #{address},
-			bknum = #{bknum},
 			unused = #{unused},
 			latitude = #{latitude} 
 			where coid=#{coid}
@@ -55,7 +54,7 @@
 	</update>
 	<delete id="delete" parameterType="int">
 		<![CDATA[
-			delete  from contact where coid= #(id)
+			delete  from contact where coid= #{coid}
 		]]>
 	</delete>
 </mapper>

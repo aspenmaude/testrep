@@ -37,7 +37,7 @@
 	<!-- Start header -->
 	<header>
 		<nav>
-			<div>
+			<div class="container">
 				<a href="/livedinner/">
 					<img src="resources/images/logo.png" alt="" />
 				</a>

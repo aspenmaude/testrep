@@ -1,5 +1,8 @@
+<%@page import="tp.kits3.livedinner.model.Contact"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +42,7 @@
 	<!-- Start header -->
 	<header>
 		<nav>
-			<div>
+			<div class="container">
 				<a href="/livedinner/"> <img src="resources/images/logo.png"
 					alt="" />
 				</a>
@@ -91,19 +94,7 @@
 	</div>
 	<!-- End All Pages -->
 
-	<div>
-		<p>Insert Contact Table</p>
-		<form action="insert" method="get">
-			<input type="text" name="coname" placeholder="Please input coname"></br>
-			<input type="text" name="priphone" placeholder="Please input priphone"> </br>
-				<input type="email" name="email" placeholder="Please input email"> </br>
-				<input type="text" name="address" placeholder="Please input address"></br>
-				<input type="number" name="unused" placeholder="Please input unused (0 or 1)"> </br>
-				<input type="number" name="latitude" placeholder="Please input latitude"></br>
-
-			<button type="submit">SUBSCRIBE</button>
-		</form>
-	</div>
+	
 	<!-- Start Contact -->
 	<div></div>
 	<div>
@@ -171,55 +162,132 @@
 		</div>
 	</div>
 	<!-- End Contact -->
+	<div class="contactTable">
+		<div style="display: inline-block; float: left; margin-right: 100px;">
+			<p style="font-weight: bold;">Insert Contact Table</p>
+			<form action="insert" method="get">
+				<input type="text" name="coname" placeholder="Please input coname"></br>
+				<input type="text" name="priphone"
+					placeholder="Please input priphone"> </br> <input type="email"
+					name="email" placeholder="Please input email"> </br> <input
+					type="text" name="address" placeholder="Please input address"></br>
+				<select name="unused">
+					<option>0</option>
+					<option>1</option>
+				</select></br> <input type="number" name="latitude"
+					placeholder="Please input latitude"></br>
+
+				<button type="submit">SUBSCRIBE</button>
+			</form>
+		</div>
+
+		<div style="display: inline-block; float: left; margin-right: 100px;">
+			<p style="font-weight: bold;">Update Contact Table</p>
+			<form action="update" method="post">
+				<input type="number" name="coid" placeholder="Please input id"></br>
+				<input type="text" name="coname" placeholder="Please input coname"></br>
+				<input type="text" name="priphone"
+					placeholder="Please input priphone"> </br> <input type="email"
+					name="email" placeholder="Please input email"> </br> <input
+					type="text" name="address" placeholder="Please input address"></br>
+				<select name="unused">
+					<option>0</option>
+					<option>1</option>
+				</select></br> <input type="number" name="latitude"
+					placeholder="Please input latitude"></br>
+
+				<button type="submit">Update</button>
+			</form>
+		</div>
+
+		<div style="display: inline-block; float: left; margin-right: 100px;">
+			<p style="font-weight: bold;">Delete Contact ID</p>
+			<form action="delete" method="post">
+				<input type="number" name="coid" placeholder="Please input id"></br>
+				<button type="submit">Delete</button>
+			</form>
+		</div>
+
+		<div style="display: inline-block; float: left;">
+			<p style="font-weight: bold;">Select Contact Table</p>
+			<table border="1">
+				<tr style="background-color: #ddd;">
+					<th>coid</th>
+					<th>coname</th>
+					<th>priphone</th>
+					<th>email</th>
+					<th>address</th>
+					<th>unused</th>
+					<th>latitude</th>
+				</tr>
+
+				<c:forEach items="${ContactTable}" var="Contact">
+					<tr>
+						<td>${Contact.coid}</td>
+						<td>${Contact.coname}</td>
+						<td>${Contact.priphone}</td>
+						<td>${Contact.email}</td>
+						<td>${Contact.address}</td>
+						<td>${Contact.unused}</td>
+						<td>${Contact.latitude}</td>
+					</tr>
+				</c:forEach>
+			</table>
+			</form>
+		</div>
+	</div>
 
 	<!-- Start Contact info -->
-	<div>
-		<div>
-			<div>
+	<!-- <div>
+		<div >
+			<div >
 				<div>
 					<i></i>
 					<div>
 						<h4>Phone</h4>
-						<p>+01 123-456-4590</p>
+						<p>
+							+01 123-456-4590
+						</p>
 					</div>
 				</div>
 				<div>
 					<i></i>
 					<div>
 						<h4>Email</h4>
-						<p>yourmail@gmail.com</p>
+						<p>
+							yourmail@gmail.com
+						</p>
 					</div>
 				</div>
 				<div>
 					<i></i>
 					<div>
 						<h4>Location</h4>
-						<p>800, Lorem Street, US</p>
+						<p>
+							800, Lorem Street, US
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- End Contact info -->
-
+	
 	<!-- Start Footer -->
-	<footer>
-		<div>
-			<div>
+	<!-- <footer>
+		<div >
+			<div >
 				<div>
 					<h3>About Us</h3>
-					<p>Integer cursus scelerisque ipsum id efficitur. Donec a dui
-						fringilla, gravida lorem ac, semper magna. Aenean rhoncus ac
-						lectus a interdum. Vivamus semper posuere dui.</p>
+					<p>Integer cursus scelerisque ipsum id efficitur. Donec a dui fringilla, gravida lorem ac, semper magna. Aenean rhoncus ac lectus a interdum. Vivamus semper posuere dui.</p>
 				</div>
 				<div>
 					<h3>Subscribe</h3>
 					<div>
 						<form>
-							<input name="EMAIL" id="subs-email"
-								placeholder="Email Address..." type="email">
-							<button type="submit">SUBSCRIBE</button>
-							<div></div>
+							<input name="EMAIL" id="subs-email" placeholder="Email Address..." type="email">
+							<button type="submit" >SUBSCRIBE</button>
+							<div ></div>
 						</form>
 					</div>
 					<ul>
@@ -233,46 +301,35 @@
 				<div>
 					<h3>Contact information</h3>
 					<p>Ipsum Street, Lorem Tower, MO, Columbia, 508000</p>
-					<p>
-						<a href="#">+01 2000 800 9999</a>
-					</p>
-					<p>
-						<a href="#"> info@admin.com</a>
-					</p>
+					<p><a href="#">+01 2000 800 9999</a></p>
+					<p><a href="#"> info@admin.com</a></p>
 				</div>
 				<div>
 					<h3>Opening hours</h3>
-					<p>
-						<span>Monday: </span>Closed
-					</p>
-					<p>
-						<span>Tue-Wed :</span> 9:Am - 10PM
-					</p>
-					<p>
-						<span>Thu-Fri :</span> 9:Am - 10PM
-					</p>
-					<p>
-						<span>Sat-Sun :</span> 5:PM - 10PM
-					</p>
+					<p><span>Monday: </span>Closed</p>
+					<p><span>Tue-Wed :</span> 9:Am - 10PM</p>
+					<p><span>Thu-Fri :</span> 9:Am - 10PM</p>
+					<p><span>Sat-Sun :</span> 5:PM - 10PM</p>
 				</div>
 			</div>
 		</div>
-
+		
 		<div>
-			<div>
-				<div>
+			<div >
+				<div >
 					<div>
-						<p>
-							All Rights Reserved. &copy; 2018 <a href="#">Live Dinner
-								Restaurant</a> Design By : <a href="#">html design</a>
-						</p>
+						<p>All Rights Reserved. &copy; 2018 <a href="#">Live Dinner Restaurant</a> Design By : 
+					<a href="#">html design</a></p>
 					</div>
 				</div>
 			</div>
 		</div>
-
-	</footer>
+		
+	</footer> -->
 	<!-- End Footer -->
+
+
+	
 
 	<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i
 		aria-hidden="true"></i></a>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mappers.bookMapper"><!-- like pakage of class-->
 	<resultMap type="bookVO" id="bookResult">
@@ -18,7 +18,7 @@
 	<!--List<Book> books = selectAll()-->
 	<select id="selectAll" resultMap="bookResult"><!-- mappers.bookMapper.selectAll-->
 		<![CDATA[
-			select * from book order by bktime desc
+			select * from book order by bkid
 		]]>
 	</select>
 	<!--selectOne(id=1)-->
@@ -31,7 +31,7 @@
 	<insert id="insert" parameterType="bookVO">
 		<![CDATA[
 			insert into book (bkname,bkemail,bkphone,bktime,bknum,booking,bkmemo) 
-			values
+			 values
 			(#{bkname},#{bkemail},#{bkphone},#{bktime},#{bknum},#{booking},#{bkmemo})
 		]]>
 	</insert>
@@ -39,7 +39,7 @@
 	<insert id="insertMail" parameterType="String">
 		<![CDATA[
 			insert into book (bkemail) 
-			values (#{bkemail})
+			 values (#{bkemail})
 		]]>
 	</insert>
 	
@@ -53,12 +53,12 @@
 			bknum = #{bknum},
 			booking = #{booking},
 			bkmemo = #{bkmemo} 
-			where bkid=#{bkid}
+			 where bkid=#{bkid}
 		]]>
 	</update>
 	<delete id="delete" parameterType="int">
 		<![CDATA[
-			delete * from book where bkid= #(id)
+			delete  from book where bkid= #{bkid}
 		]]>
 	</delete>
 </mapper>

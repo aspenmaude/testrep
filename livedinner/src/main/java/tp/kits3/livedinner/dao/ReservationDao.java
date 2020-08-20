@@ -9,10 +9,10 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Repository;
 
-import tp.kits3.livedinner.model.Contact;
+import tp.kits3.livedinner.model.Book;
 
 @Repository
-public class ContactDao {
+public class ReservationDao {
 private static SqlSessionFactory factory = null;
 	
 	private static SqlSessionFactory getInstance() {
@@ -27,31 +27,31 @@ private static SqlSessionFactory factory = null;
 		}
 		return factory;
 	}
-	
-	public void insertDao(Contact contact) {
+
+	public void insertDao(Book book) {
 		SqlSession session = getInstance().openSession();
-		session.insert("mappers.contactMapper.insert", contact);
+		session.insert("mappers.bookMapper.insert", book);
 		session.commit();
 		
 	}
 
-	public void updateDao(Contact contact) {
+	public void updateDao(Book book) {
 		SqlSession session = getInstance().openSession();
-		session.update("mappers.contactMapper.update", contact);
+		session.update("mappers.bookMapper.update", book);
 		session.commit();
 		
 	}
 
-	public void delete(int coid) {
+	public void deleteDao(int bkid) {
 		SqlSession session = getInstance().openSession();
-		session.delete("mappers.contactMapper.delete", coid);
+		session.delete("mappers.bookMapper.delete", bkid);
 		session.commit();
 		
 	}
 
-	public List<Contact> selectAllDao() {
+	public List<Book> selectAllDao() {
 		SqlSession session = getInstance().openSession();
-		return session.selectList("mappers.contactMapper.selectAll");
+		return session.selectList("mappers.bookMapper.selectAll");
 	}
 
 }

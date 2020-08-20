@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
  
 <!DOCTYPE html>
@@ -38,7 +39,7 @@
 	<!-- Start header -->
 	<header>
 		<nav>
-			<div>
+			<div class="container">
 				<a href="/livedinner/">
 					<img src="resources/images/logo.png" alt="" />
 				</a>
@@ -86,7 +87,7 @@
 	<!-- End All Pages -->
 	
 	<!-- Start Reservation -->
-	<div>
+	<!-- <div>
 		<div >
 			<div >
 				<div >
@@ -165,11 +166,87 @@
 				</div>
 			</div>
 		</div>
+	</div> -->
+	----------------------------------------------------------------------------------------------------------</br>
+	----------------------------------------------------------------------------------------------------------</br>
+	<div class="bookTable">
+		<div style="display: inline-block; float: left; margin-right: 100px;">
+			<p style="font-weight: bold;">Insert Book Table</p>
+			<form action="reservation/insert" method="POST">
+				<input type="text" name="bkname" placeholder="Please input name"></br>
+				<input type="email" name="bkemail" placeholder="Please input email"></br> 
+				<input type="text" name="bkphone" placeholder="Please input phone"> </br> 
+				<input type="datetime-local" name="bktime" ></br>
+				<input type="number" name="bknum" placeholder="Please input number"></br>
+				<input type="text" name="booking" placeholder="Please input booking"></br>
+				<input type="text" name="bkmemo" placeholder="Please input memo"></br>
+
+
+				<button type="submit">SUBSCRIBE</button>
+			</form>
+		</div>
+
+		<div style="display: inline-block; float: left; margin-right: 100px;">
+			<p style="font-weight: bold;">Update Book Table</p>
+			<form action="reservation/update" method="POST">
+				<input type="number" name="bkid" placeholder="Please input id"></br>
+				<input type="text" name="bkname" placeholder="Please input name"></br>
+				<input type="email" name="bkemail" placeholder="Please input email"></br> 
+				<input type="text" name="bkphone" placeholder="Please input phone"> </br> 
+				<input type="datetime-local" name="bktime" ></br>
+				<input type="number" name="bknum" placeholder="Please input number"></br>
+				<input type="text" name="booking" placeholder="Please input booking"></br>
+				<input type="text" name="bkmemo" placeholder="Please input memo"></br>
+
+
+				<button type="submit">Update</button>
+			</form>
+		</div>
+
+		<div style="display: inline-block; float: left; margin-right: 100px;">
+			<p style="font-weight: bold;">Delete Book ID</p>
+			<form action="reservation/delete" method="post">
+				<input type="number" name="bkid" placeholder="Please input id"></br>
+				<button type="submit">Delete</button>
+			</form>
+		</div>
+
+		<div style="display: inline-block; float: left;">
+			<p style="font-weight: bold;">Select Book Table</p>
+			<table border="1">
+				<tr style="background-color: #ddd;">
+					<th>bkid</th>
+					<th>bkname</th>
+					<th>bkemail</th>
+					<th>bkphone</th>
+					<th>bktime</th>
+					<th>bknum</th>
+					<th>booking</th>
+					<th>bkmemo</th>
+				</tr>
+
+				<c:forEach items="${BookTable}" var="Book">
+					<tr>
+						<td>${Book.bkid}</td>
+						<td>${Book.bkname}</td>
+						<td>${Book.bkemail}</td>
+						<td>${Book.bkphone}</td>
+						<td>${Book.bktime}</td>
+						<td>${Book.bknum}</td>
+						<td>${Book.booking}</td>
+						<td>${Book.bkmemo}</td>
+					</tr>
+				</c:forEach>
+			</table>
+			</form>
+		</div>
 	</div>
+	
+
 	<!-- End Reservation -->
 	
 	<!-- Start Customer Reviews -->
-	<div>
+	<!-- <div> 
 		<div >
 			<div >
 				<div >
@@ -220,12 +297,12 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>  -->
 	<!-- End Customer Reviews -->
 
 	
 	<!-- Start Contact info -->
-	<div>
+	<!-- <div>
 		<div >
 			<div >
 				<div>
@@ -257,11 +334,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- End Contact info -->
 	
 	<!-- Start Footer -->
-	<footer>
+	<!-- <footer>
 		<div >
 			<div >
 				<div>
@@ -312,7 +389,7 @@
 			</div>
 		</div>
 		
-	</footer>
+	</footer> -->
 	<!-- End Footer -->
 	
 	<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i aria-hidden="true"></i></a>
