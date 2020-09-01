@@ -1,0 +1,141 @@
+/* ----------------------------Common------------------------------ */
+:root{
+    --colorRed: red;
+    --font:'Roboto', sans-serif;
+    --mau1:#cad2c5;
+    --mau2:#84a98c;
+    --mau3:#52796f;
+    --mau4:#354f52;
+    --mau5:#2f3e46;
+    --font14px: 14px;
+    --font24px:24px;
+    --font16px:16px;
+    --d: 18px;
+}
+* {
+
+    font-family: var(--font);
+    margin: 0;
+    padding: 0;
+
+}
+ul, li {
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* ----------------------------//Common------------------------------ */
+
+/* ----------------------------Header------------------------------ */
+header {background-color: var(--mau4)}
+header .logo-header {
+    margin-top: 10px;
+    font-size: var(--d);
+}
+header .logo-header a {
+    text-decoration: none;
+    color:var(--mau1);
+}
+
+header .menu-header {}
+header .menu-header ul {
+    overflow: hidden;
+    margin-top: 15px;
+}
+header .menu-header ul li {
+    display: inline-block;
+    float: left;
+    margin: 0px 20px;
+}
+header .menu-header ul li a {
+    font-size: 18px;
+    color: var(--mau1);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header .search-header {
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+header .search-header input {
+    width: 90%;
+    padding: 5px;
+    background-color: var(--mau1);
+    border: none;
+}
+header .search-header input:focus{
+    outline: none;
+    color:var(--mau5);
+}
+
+header .search-header .icon-search {
+    position: absolute;
+    top: 5px;
+    right: 45px;
+}
+header .search-header .icon-search a {
+    color: var(--mau5);
+}
+header .login-header {
+    margin-top: 15px;
+}
+header .login-header a {
+    color: var(--mau1);
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* ----------------------------//Header------------------------------ */
+
+
+/* ----------------------------Navmenu------------------------------ */
+
+nav {background-color: var(--mau5);}
+nav .menu-nav {}
+nav .menu-nav ul {
+    overflow: hidden;
+}
+nav .menu-nav ul li {
+    display: inline-block;
+    float: left;
+    margin: 0px 50px 0px 0px;
+}
+nav .menu-nav ul li a {
+    color: var(--mau1);
+    text-decoration: none;
+}
+
+/* ----------------------------//Navmenu------------------------------ */
+
+
+/* ----------------------------Section----------------------------- */
+section {
+    background-color: var(--mau1);
+}
+section .section-content {
+    padding-top: 10px;
+}
+section .section-content .menu-left {}
+section .section-content .menu-left ul {}
+section .section-content .menu-left ul li {}
+section .section-content .menu-left ul li a {
+    color: var(--mau5);
+    text-decoration: none;
+    font-size: var(--font14px);
+}
+
+
+
+/* ----------------------------//Section------------------------------ */
