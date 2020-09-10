@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.messageMapper">
+
+	<resultMap type="messageVO" id="messageResult">
+		<result property="messid" column="messid"/>
+		<result property="senduserid" column="senduserid"/>
+		<result property="receiveuserid" column="receiveuserid"/>
+		<result property="content" column="content"/>
+		<result property="datemsg" column="datemsg"/>
+	</resultMap>
+	
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="messageResult">
+		<![CDATA[
+			select * from message order by messid
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="messageResult" parameterType="int">
+		<![CDATA[
+			select * from message where messid = #{id}
+		]]>
+	</select>
+	<insert id="insert" parameterType="messageVO">
+	<![CDATA[
+	insert into message(senduserid,receiveuserid,content,datemsg)
+	values(#{senduserid},#{receiveuserid},#{content},#{datemsg})
+	]]>
+	</insert>
+	<update id="update" parameterType="messageVO">
+	<![CDATA[
+		update message set
+			senduserid=#{senduserid},
+			receiveuserid=#{receiveuserid},
+			content=#{content},
+			datemsg=#{datemsg},
+		where messid = #{messid}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		detele from message 
+		where messid = #{messid}
+	]]>
+	</delete>
+	
+</mapper>

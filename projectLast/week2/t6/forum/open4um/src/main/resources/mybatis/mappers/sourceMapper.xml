@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.sourceMapper">
+
+	<resultMap type="sourceVO" id="sourceResult">
+		<result property="sourceid" column="sourceid"/>
+		<result property="date" column="date"/>
+		<result property="sourcename" column="sourcename"/>
+		<result property="size" column="size"/>
+		<result property="contentdetails" column="contentdetails"/>
+		<result property="title" column="title"/>
+		<result property="userid" column="userid"/>
+		<result property="ctgid" column="ctgid"/>
+		<result property="price" column="price"/>
+		<result property="avatar" column="avatar"/>
+		<result property="stateid" column="stateid"/>
+	</resultMap>
+	
+	
+	<!-- sql statement -->
+	<select id="selectAll" resultMap="sourceResult">
+		<![CDATA[
+			select * from source order by sourceid
+		]]>
+	</select>
+	
+	<select id="selectOne" resultMap="sourceResult" parameterType="int">
+		<![CDATA[
+			select * from source where sourceid = #{id}
+		]]>
+	</select>
+	<insert id="insert" parameterType="sourceVO">
+	<![CDATA[
+	insert into source(date,sourcename,size,contentdetails,title,userid,ctgid,price,avatar,stateid)
+	values(#{date},#{sourcename},#{size},#{contentdetails},#{title},#{userid},#{ctgid},#{price},#{avatar},#{stateid})
+	]]>
+	</insert>
+	<update id="update" parameterType="sourceVO">
+	<![CDATA[
+		update source set
+			date=#{date},
+			sourcename=#{sourcename},
+			size=#{size},
+			contentdetails=#{contentdetails},
+			title=#{title},
+			userid=#{userid},
+			ctgid=#{ctgid},
+			price=#{price},
+			avatar=#{avatar},
+			stateid=#{stateid},
+		where sourceid = #{sourceid}
+	]]>
+	</update>
+	<delete id="delete" parameterType="int">
+	<![CDATA[
+		detele from source 
+		where sourceid = #{sourceid}
+	]]>
+	</delete>
+	
+</mapper>

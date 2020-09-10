@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="tp.kits3.open4um.vo.Cart" alias="cartVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.Category" alias="categoryVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.Comment" alias="commentVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.HistoryMoney" alias="historymoneyVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.Message" alias="messageVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.OrderHistory" alias="orderhistoryVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.Product" alias="productVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.Rating" alias="ratingVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.Report" alias="reportVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.RoleAccount" alias="roleaccountVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.Source" alias="sourceVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.StateProduct" alias="stateproductVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.Tag" alias="tagVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.TagProduct" alias="tagproductVO"/>
+		<typeAlias type="tp.kits3.open4um.vo.User" alias="userVO"/>
+		
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="org.mariadb.jdbc.Driver"/>
+				<property name="url" value="jdbc:mariadb://192.168.123.34/open4um"/>
+				<property name="username" value="root"/>
+				<property name="password" value="nguyenthai"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="mybatis/mappers/cartMapper.xml"/>
+		<mapper resource="mybatis/mappers/categoryMapper.xml"/>
+		<mapper resource="mybatis/mappers/commentMapper.xml"/>
+		<mapper resource="mybatis/mappers/historymoneyMapper.xml"/>
+		<mapper resource="mybatis/mappers/messageMapper.xml"/>
+		<mapper resource="mybatis/mappers/orderhistoryMapper.xml"/>
+		<mapper resource="mybatis/mappers/productMapper.xml"/>
+		<mapper resource="mybatis/mappers/ratingMapper.xml"/>
+		<mapper resource="mybatis/mappers/reportMapper.xml"/>
+		<mapper resource="mybatis/mappers/roleaccountMapper.xml"/>
+		<mapper resource="mybatis/mappers/sourceMapper.xml"/>
+		<mapper resource="mybatis/mappers/stateproductMapper.xml"/>
+		<mapper resource="mybatis/mappers/tagMapper.xml"/>
+		<mapper resource="mybatis/mappers/tagproductMapper.xml"/>
+		<mapper resource="mybatis/mappers/userMapper.xml"/>
+	</mappers>
+
+</configuration>
