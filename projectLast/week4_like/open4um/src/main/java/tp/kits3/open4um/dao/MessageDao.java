@@ -1,0 +1,13 @@
+package tp.kits3.open4um.dao;
+
+import java.util.List;
+
+import tp.kits3.open4um.vo.Message;
+
+public interface MessageDao {
+	public List<Message> selectAll(int id);
+	
+	public List<Message> selectMessage(int id);
+	
+	public Message selectOne(int id);
+}
